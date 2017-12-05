@@ -6,7 +6,10 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      scrollingText: ''
+      title: '',
+      crawl: '',
+      episodeNumber: ''
+      
     }
   }
 
@@ -25,7 +28,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Scrolling />
+        <Scrolling 
+          titleName={this.state.title}
+          scrollCrawl={this.state.crawl}
+          episodeNumber={this.state.episodeNumber}
+        />
        
       </div>
     );
