@@ -4,7 +4,7 @@
   color: #feda4a;
   display: flex;
   font-family: 'Pathway Gothic One', sans-serif;
-  height: 350px;
+  height: 100%;
   justify-content: center;
   letter-spacing: 6px;
   width: 100%;
@@ -20,4 +20,4 @@ h3 {
   margin: 0px; }
 
 h5 {
-  margin: 0px; }
+  margin: 10px 0px; }
