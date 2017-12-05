@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import Scrolling from './components/scrolling-text/Scrolling-text';
 import Header from './components/header/Header';
+import CardContainer from './components/cardContainer/CardContainer';
+import Card from './components/card/Card';
 
 class App extends Component {
   constructor() {
@@ -18,7 +20,6 @@ class App extends Component {
     const randFilm = Math.floor(Math.random() * (7) + 1);
     const fetchedData = await fetch(`https://swapi.co/api/films/${randFilm}/`)
     const data = await fetchedData.json()
-    console.log(data)
     const title = data.title
     const crawl = data.opening_crawl
     const episodeNumber = data.episode_id
@@ -40,6 +41,8 @@ class App extends Component {
       </div>
       <div className="bottom">
         <Header />
+        <CardContainer />
+        <Card />
       </div>
        
       </div>
