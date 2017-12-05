@@ -1,5 +1,4 @@
 
-
 .scrolling-area {
   background-image: url(https://i.stack.imgur.com/GSbZp.jpg);
   background-size: cover;
@@ -9,5 +8,12 @@
   height: 350px;
   justify-content: center;
   letter-spacing: 6px;
+  width: 100%;
   text-align: justify;
+  flex-wrap: wrap;
+}
+
+.scroll-text {
+  text-align: center;
+  width: 50%;
 }

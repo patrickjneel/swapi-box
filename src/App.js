@@ -17,6 +17,7 @@ class App extends Component {
     const randFilm = Math.floor(Math.random() * (7) + 1);
     const fetchedData = await fetch(`https://swapi.co/api/films/${randFilm}/`)
     const data = await fetchedData.json()
+    console.log(data)
     const title = data.title
     const crawl = data.opening_crawl
     const episodeNumber = data.episode_id
@@ -28,11 +29,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <div className="top">
         <Scrolling 
           titleName={this.state.title}
           scrollCrawl={this.state.crawl}
           episodeNumber={this.state.episodeNumber}
         />
+      </div>
+      <div className="bottom">
+      </div>
        
       </div>
     );
