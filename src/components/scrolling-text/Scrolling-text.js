@@ -1,8 +1,9 @@
 import React from 'react';
+import './scrolling-text.css';
 
 const Scrolling = () => {
   return (
-    <div>
+    <div className="scrolling-area">
       Stuff Goes Here
     </div>
   )
