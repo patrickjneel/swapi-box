@@ -1,15 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { shallow, mount } from 'enzyme';
-import App from './App';
+// import React from 'react';
+// // import ReactDOM from 'react-dom';
+// import { shallow, mount } from 'enzyme';
+// import App from './App';
 
-describe('App Test', () => {
+// describe('App Test', () => {
 
-  it('should be defined', () => {
-  const renderedApp = shallow(<App />);
+//   it('should be defined', () => {
+//   const renderedApp = shallow(<App />);
 
-  expect(renderedApp).toBeDefined();
+//   expect(renderedApp).toBeDefined();
     
-  });
+//   });
   
-});
+// });
