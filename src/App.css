@@ -2,5 +2,19 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  max-width: 100%;
 }
 
+.App {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.top {
+  width: 100%;
+}
+
+.bottom {
+  width: 100%;
+}
