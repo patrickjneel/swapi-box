@@ -11,7 +11,8 @@ class App extends Component {
       title: '',
       crawl: '',
       episodeNumber: '',
-      people: []
+      people: [],
+      vehicle: []
   
     }
     this.fetchPeople = this.fetchPeople.bind(this);
@@ -24,8 +25,9 @@ class App extends Component {
     const title = data.title
     const crawl = data.opening_crawl
     const episodeNumber = data.episode_id
-    const people = await this.fetchPeople()
-    this.setState({ title, crawl, episodeNumber, people })
+    const people =  await this.fetchPeople()
+    const vehicle = this.fetchVehicles();
+    this.setState({ title, crawl, episodeNumber, people, vehicle })
   }
 
   async fetchPeople() {
@@ -40,10 +42,26 @@ class App extends Component {
       return Object.assign({}, {homeworld: homeWorldData.name}, {name:person.name}, {species:speciesData.name} , {population: homeWorldData.population})
 
     });
-        return Promise.all(mappedPeople)
+        return Promise.all(mappedPeople);
+  }
+
+  async fetchVehicles() {
+    const vehicleFetch = await fetch('https://swapi.co/api/vehicles/');
+    const vehicleData = await vehicleFetch.json();
+    const vehicleResults = await vehicleData.results;
+    const vehicleMapped = vehicleResults.map(vehicle => {
+    let vehicleName = vehicle.name;
+    let vehicleModel = vehicle.model;
+    let vehicleClass = vehicle.vehicle_class;
+    let passengers = vehicle.passengers;
+      return Object.assign({}, {name: vehicleName}, {model: vehicleModel}, {class: vehicleClass}, {passengers: passengers})
+    })
+     
+      return Promise.all(vehicleMapped);
   }
   
   render() {
+    console.log(this.state)
     return (
       <div className="App">
       <div className="top">
