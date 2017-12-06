@@ -3,7 +3,6 @@ import './App.css';
 import Scrolling from './components/scrolling-text/Scrolling-text';
 import Header from './components/header/Header';
 import CardContainer from './components/cardContainer/CardContainer';
-import Card from './components/card/Card';
 
 class App extends Component {
   constructor() {

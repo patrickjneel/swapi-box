@@ -2,7 +2,6 @@ import React from 'react';
 import './card.css';
 
 const Card = ({name, planet, population, species}) => {
-  console.log(name)
   return (
     <div className="card">
       <h3>{name}</h3>
