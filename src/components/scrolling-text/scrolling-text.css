@@ -7,13 +7,14 @@
   height: 350px;
   justify-content: center;
   letter-spacing: 6px;
+  overflow: hidden;
   perspective: 350px;
   position: relative;
   text-align: justify;
   width: 100%; }
 
 .scroll-text {
-  animation: scroll-text 275s linear;
+  animation: scroll-text 175s linear;
   animation-iteration-count: infinite;
   font-size: 24px;
   position: relative;
@@ -30,7 +31,7 @@ h5 {
 
 @keyframes scroll-text {
   0% {
-    top: 0;
+    top: 300px;
     transform: rotateX(20deg) translateZ(0); }
   100% {
     top: -5000px;
