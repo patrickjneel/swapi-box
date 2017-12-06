@@ -25,7 +25,7 @@ class App extends Component {
     const title = data.title
     const crawl = data.opening_crawl
     const episodeNumber = data.episode_id
-    const people = this.fetchPeople()
+    const people = await this.fetchPeople()
     this.setState({ title, crawl, episodeNumber, people })
   }
 
@@ -45,7 +45,6 @@ class App extends Component {
   }
   
   render() {
-    console.log(this.state)
     return (
       <div className="App">
       <div className="top">
@@ -56,9 +55,12 @@ class App extends Component {
         />
       </div>
       <div className="bottom">
-        <Header fetchPeople={this.fetchPeople}/>
-        <CardContainer />
-        <Card />
+        <Header 
+          fetchPeople={this.fetchPeople}
+        />
+        <CardContainer 
+          peopleData={this.state.people}
+        />
       </div>
        
       </div>
