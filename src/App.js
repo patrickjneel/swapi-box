@@ -25,17 +25,11 @@ class App extends Component {
     const title = data.title
     const crawl = data.opening_crawl
     const episodeNumber = data.episode_id
-    //const peopleFetch = await('url')
-    //const peopleData = await peopleFetch.json()
-    //const people = await this.fetchHomeworld.Species(peopleData)
-    //this.setState({people})
     const people = this.fetchPeople()
     this.setState({ title, crawl, episodeNumber, people })
   }
 
   async fetchPeople() {
-    //pass in peopleData
-    //const unresolvedPromises = peopleData.map(async(person) => 
     const peopleData = await fetch('https://swapi.co/api/people/')
     const people = await peopleData.json();
     const peopleArray = await people.results;
@@ -45,8 +39,8 @@ class App extends Component {
       let speciesFetch = await fetch (person.species);
       let speciesData = await speciesFetch.json();
       return Object.assign({}, {homeworld: homeWorldData.name}, {name:person.name}, {species:speciesData.name} , {population: homeWorldData.population})
-      //return person{ name: person.name, data: {homeworld: homeworldData.name, species: speciesData.name, population: homeWorldData.population}
-    })
+
+    });
         return Promise.all(mappedPeople)
   }
   
