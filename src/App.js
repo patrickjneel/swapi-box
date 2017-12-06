@@ -12,6 +12,7 @@ class App extends Component {
       title: '',
       crawl: '',
       episodeNumber: '',
+      people: []
   
     }
     this.fetchPeople = this.fetchPeople.bind(this);
@@ -19,7 +20,7 @@ class App extends Component {
 
   async componentDidMount() {
     const randFilm = Math.floor(Math.random() * (7) + 1);
-    const fetchedData = await fetch(`https://swapi.co/api/films/${randFilm}/`)
+    const fetchedData = await fetch(`https://swapi.co/api/films/${randFilm}/`);
     const data = await fetchedData.json();
     const title = data.title
     const crawl = data.opening_crawl
@@ -29,13 +30,15 @@ class App extends Component {
   }
 
   async fetchPeople() {
-    const peopleData = await fetch('https://swapi.co/api/people/1/')
+    const peopleData = await fetch('https://swapi.co/api/people/')
     const people = await peopleData.json();
-    const name = people.name;
-    const species = people.species;
-    const homeWorld = people.homeworld;
-      console.log(homeWorld)
-    // const homeWorld = people.
+    console.log(people)
+    const species = await people.results;
+    const specimen = await species.map(async(person) => {
+      // console.log(person.homeworld)
+     // return Object.assign({}, person.homeworld)
+    })
+  
   }
   
   render() {
