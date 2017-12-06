@@ -3,7 +3,7 @@ import React from 'react';
 const CardContainer = () => {
   return (
     <div>
-    Cards Go Here
+    Stuff goes here
     </div>
   )
 }
