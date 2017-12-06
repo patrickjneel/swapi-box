@@ -21,10 +21,10 @@ class App extends Component {
     const fetchedData = await fetch(`https://swapi.co/api/films/${randFilm}/`)
     const data = await fetchedData.json()
     const title = data.title
+    console.log(title)
     const crawl = data.opening_crawl
     const episodeNumber = data.episode_id
 
-    
     this.setState({ title, crawl, episodeNumber })
   }
 
