@@ -2,7 +2,6 @@ import React from 'react';
 import './scrolling-text.css';
 
 const Scrolling = ({titleName, scrollCrawl, episodeNumber}) => {
-
   const epNumerial = {
       1: 'I',
       2: 'II',
