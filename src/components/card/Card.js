@@ -1,8 +1,9 @@
 import React from 'react';
+import './card.css';
 
-const Card = () => {
+const Card = ({}) => {
   return (
-    <div>
+    <div className="card">
       Individual Card thing
     </div>
   )

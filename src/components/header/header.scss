@@ -1,13 +1,18 @@
 .header {
-  background-color: orange;
+  background-color: black;
   display: flex;
   justify-content: space-around;
-  padding: 5px;
+  height: 35px;
+  padding: 20px 0px;
 
 }
 
 button {
-  background-color: brown;
-  color: green;
+  background-color: #ED2939;
+  color: white;
+  font-size: 18px;
+  // font-family: 
+  height: 40px;
   padding: 2px 5px;
+  width: 100px;
 }
