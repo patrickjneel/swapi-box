@@ -25,23 +25,33 @@ class App extends Component {
     const title = data.title
     const crawl = data.opening_crawl
     const episodeNumber = data.episode_id
-
-    this.setState({ title, crawl, episodeNumber })
+    //const peopleFetch = await('url')
+    //const peopleData = await peopleFetch.json()
+    //const people = await this.fetchHomeworld.Species(peopleData)
+    //this.setState({people})
+    const people = this.fetchPeople()
+    this.setState({ title, crawl, episodeNumber, people })
   }
 
   async fetchPeople() {
+    //pass in peopleData
+    //const unresolvedPromises = peopleData.map(async(person) => 
     const peopleData = await fetch('https://swapi.co/api/people/')
     const people = await peopleData.json();
-    console.log(people)
-    const species = await people.results;
-    const specimen = await species.map(async(person) => {
-      // console.log(person.homeworld)
-     // return Object.assign({}, person.homeworld)
+    const peopleArray = await people.results;
+    const mappedPeople = await peopleArray.map(async(person) => {
+      let homeWorldFetch = await fetch(person.homeworld);
+      let homeWorldData = await homeWorldFetch.json();
+      let speciesFetch = await fetch (person.species);
+      let speciesData = await speciesFetch.json();
+      return Object.assign({}, {homeworld: homeWorldData.name}, {name:person.name}, {species:speciesData.name} , {population: homeWorldData.population})
+      //return person{ name: person.name, data: {homeworld: homeworldData.name, species: speciesData.name, population: homeWorldData.population}
     })
-  
+        return Promise.all(mappedPeople)
   }
   
   render() {
+    console.log(this.state)
     return (
       <div className="App">
       <div className="top">
