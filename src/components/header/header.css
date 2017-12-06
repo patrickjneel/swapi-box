@@ -2,12 +2,9 @@
   background-color: orange;
   display: flex;
   justify-content: space-around;
-  padding: 5px;
-
-}
+  padding: 5px; }
 
 button {
   background-color: brown;
   color: green;
-  padding: 2px 5px;
-}
+  padding: 2px 5px; }

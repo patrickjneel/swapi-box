@@ -1,4 +1,5 @@
 import React from 'react';
+import './header.css';
 
 
 const Header = () => {
@@ -7,6 +8,7 @@ const Header = () => {
       <button>People</button>
       <button>Planets</button>
       <button>Vehicles</button>
+      <button>Favorites</button>
     </div>
   )
 }
