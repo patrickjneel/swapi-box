@@ -1,12 +1,12 @@
 import React from 'react';
 import './card.css';
-
+import Imperial_Emblem from '../../Imperial_Emblem.svg';
 const Card = ( {itemData, location} ) => {
   
   return (
     <div className="card">
       <h3>Name: {itemData.name}</h3>
-      <img src="./src/components/public/Imperial_Emblem.svg" />
+      <img src={Imperial_Emblem}/>
       { 
         location === 'people' &&
         <div className="card-data">

@@ -12,7 +12,8 @@ class App extends Component {
       people: [],
       vehicles: [],
       planets: [],
-      location: 'people'
+      location: 'people',
+      favorites: []
   
     }
       this.upDateData = this.upDateData.bind(this)    
