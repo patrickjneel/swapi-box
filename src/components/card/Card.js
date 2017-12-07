@@ -5,10 +5,12 @@ const Card = ( {itemData, location, addFavorite} ) => {
   
   return (
     <div className="card">
-      <h3>Name: {itemData.name}</h3>
+    <div className="top-card">
+      <h3>{itemData.name}</h3>
       <img 
         onClick={() => addFavorite()}
         src={Imperial_Emblem}/>
+    </div>
       { 
         location === 'people' &&
         <div className="card-data">
