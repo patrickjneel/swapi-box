@@ -2,7 +2,7 @@
   background-color: black;
   display: inline-block;
   border: 3px solid #ED2939;
-  height: 400px;
+  height: 418px;
   margin: 10px 10px;
   padding: 5px;
   width: 322px;
@@ -21,12 +21,15 @@
 
   .card-data {
     background-color: #f8f9f4;
-    height: 300px;
+    height: 342px;
 
     h4 {
     padding: 10px;
     margin: 0px;
    }
+    h5 {
+      margin: 5px 20px;
+    }
   }
   
   .h3 {
