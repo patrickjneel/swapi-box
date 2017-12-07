@@ -12,11 +12,17 @@ class App extends Component {
       crawl: '',
       episodeNumber: '',
       people: [],
-      vehicle: [],
-      planet: []
+      vehicles: [],
+      planets: [],
+      location: 'people'
   
     }
-    this.fetchPeople = this.fetchPeople.bind(this);
+      this.upDateData = this.upDateData.bind(this)    
+  }
+
+  upDateData(event) {
+    this.setState({location: event.target.innerText.toLowerCase()})
+    
   }
 
   async componentDidMount() {
@@ -27,9 +33,9 @@ class App extends Component {
     const crawl = data.opening_crawl
     const episodeNumber = data.episode_id
     const people =  await this.fetchPeople()
-    const vehicle = await this.fetchVehicles();
-    const planet =  await this.fetchPlanets();
-    this.setState({ title, crawl, episodeNumber, people, vehicle, planet })
+    const vehicles = await this.fetchVehicles();
+    const planets =  await this.fetchPlanets();
+    this.setState({ title, crawl, episodeNumber, people, vehicles, planets })
   }
 
   async fetchPeople() {
@@ -81,6 +87,9 @@ class App extends Component {
   
   render() {
     console.log(this.state)
+
+    const arrayToRender = this.state.location;
+
     return (
       <div className="App">
       <div className="top">
@@ -92,10 +101,10 @@ class App extends Component {
       </div>
       <div className="bottom">
         <Header 
-          fetchPeople={this.fetchPeople}
+          upDateData={this.upDateData}
         />
         <CardContainer 
-          peopleData={this.state.people}
+          peopleData={this.state[arrayToRender]}
         />
       </div>
        

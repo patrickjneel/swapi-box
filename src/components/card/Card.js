@@ -8,6 +8,7 @@ const Card = ({name, planet, population, species}) => {
       <h4>{planet}</h4>
       <h4>{population}</h4>
       <h5>{species}</h5>
+      {species && <h5>hi</h5>}
     </div>
   )
 }
