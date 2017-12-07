@@ -8,9 +8,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      title: '',
-      crawl: '',
-      episodeNumber: '',
+      film: '',
       people: [],
       vehicles: [],
       planets: [],
@@ -26,16 +24,24 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const randFilm = Math.floor(Math.random() * (7) + 1);
-    const fetchedData = await fetch(`https://swapi.co/api/films/${randFilm}/`);
-    const data = await fetchedData.json();
-    const title = data.title
-    const crawl = data.opening_crawl
-    const episodeNumber = data.episode_id
+    // const randFilm = Math.floor(Math.random() * (7) + 1);
+    // const fetchedData = await fetch(`https://swapi.co/api/films/${randFilm}/`);
+    // const data = await fetchedData.json();
+    // const title = data.title
+    // const crawl = data.opening_crawl
+    // const episodeNumber = data.episode_id
+    const film = await this.fetchFilm();
     const people =  await this.fetchPeople()
     const vehicles = await this.fetchVehicles();
     const planets =  await this.fetchPlanets();
-    this.setState({ title, crawl, episodeNumber, people, vehicles, planets })
+    this.setState({ film, people, vehicles, planets })
+  }
+
+  async fetchFilm() {
+    const randFilm = Math.floor(Math.random() * (7) + 1);
+    const fetchedData = await fetch(`https://swapi.co/api/films/${randFilm}/`);
+    const data = await fetchedData.json();
+    return Object.assign({}, {title: data.title}, {crawl: data.opening_crawl}, {episodeNumber: data.episode_id})
   }
 
   async fetchPeople() {
@@ -71,7 +77,7 @@ class App extends Component {
     const mappedPlanets = planetData.results.map(async(planet) => {
     const planetRes = planet.residents;
     const planetFetch = await this.planetResidents(planetRes)
-    return Object.assign({name: planet.name}, {terrrain: planet.terrain}, {climate: planet.climate}, {population: planet.population}, {residents: ''})
+    return Object.assign({name: planet.name}, {terrrain: planet.terrain}, {climate: planet.climate}, {population: planet.population}, {residents: planet.residents})
     })
     return Promise.all(mappedPlanets)
   }
@@ -86,17 +92,15 @@ class App extends Component {
   }
   
   render() {
-    console.log(this.state)
-
+    console.log(this.state.title)
     const arrayToRender = this.state.location;
 
     return (
       <div className="App">
       <div className="top">
         <Scrolling 
-          titleName={this.state.title}
-          scrollCrawl={this.state.crawl}
-          episodeNumber={this.state.episodeNumber}
+          film={this.state.film}
+          
         />
       </div>
       <div className="bottom">
@@ -104,7 +108,7 @@ class App extends Component {
           upDateData={this.upDateData}
         />
         <CardContainer 
-          peopleData={this.state[arrayToRender]}
+          itemData={this.state[arrayToRender]}
         />
       </div>
        

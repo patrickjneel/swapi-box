@@ -1,4 +1,8 @@
 .card {
   border: 1px solid black;
-  height: 120px;
-  width: 120px; }
+  height: 180px;
+  margin: 7px;
+  padding: 5px;
+  width: 239px; }
+  .card .card h3 {
+    font-size: 16px; }
