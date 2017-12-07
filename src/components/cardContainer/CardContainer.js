@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../card/Card';
+import './cardContainer.css';
 
 const CardContainer = ({itemData, location}) => {
   const persons = itemData.map(card => {

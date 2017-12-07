@@ -1,9 +1,13 @@
 .card {
-  display: inline-block;
+  background-color: #40434E;
   border: 1px solid black;
-  height: 180px;
-  margin: 7px;
+  height: 400px;
+  margin: 10px 10px;
   padding: 5px;
-  width: 239px; }
+  width: 322px; }
+  .card .card-data {
+    height: 110px; }
   .card .card h3 {
     font-size: 16px; }
+  .card .card h4 {
+    height: 20px; }
