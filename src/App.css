@@ -5,17 +5,14 @@ body {
   max-width: 100%;
 }
 
-.App {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
 
 .top {
   width: 100%;
 }
 
 .bottom {
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
 }
 

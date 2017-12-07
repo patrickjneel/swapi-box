@@ -12,22 +12,19 @@
   position: relative;
   text-align: justify;
   width: 100%; }
-
-.scroll-text {
-  animation: scroll-text 175s linear;
-  animation-iteration-count: infinite;
-  font-size: 40px;
-  position: relative;
-  text-align: center;
-  top: -100px;
-  transform-origin: 0% 0%;
-  width: 65%; }
-
-h3 {
-  margin: 0px; }
-
-h5 {
-  margin: 10px 0px; }
+  .scrolling-area .scroll-text {
+    animation: scroll-text 175s linear;
+    animation-iteration-count: infinite;
+    font-size: 40px;
+    position: relative;
+    text-align: center;
+    top: -100px;
+    transform-origin: 0% 0%;
+    width: 65%; }
+    .scrolling-area .scroll-text h3 {
+      margin: 0px; }
+    .scrolling-area .scroll-text h5 {
+      margin: 10px 0px; }
 
 @keyframes scroll-text {
   0% {
