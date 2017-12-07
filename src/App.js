@@ -12,15 +12,21 @@ class App extends Component {
       people: [],
       vehicles: [],
       planets: [],
-      location: 'people'
+      location: 'people',
+      favorites: []
   
     }
-      this.upDateData = this.upDateData.bind(this)    
+      this.upDateData = this.upDateData.bind(this);
+      this.addFavorite = this.addFavorite.bind(this);    
   }
 
   upDateData(event) {
     this.setState({location: event.target.innerText.toLowerCase()})
     
+  }
+
+  addFavorite() {
+    console.log('favorite')
   }
 
   async componentDidMount() {
@@ -110,6 +116,7 @@ class App extends Component {
         <CardContainer 
           itemData={this.state[arrayToRender]}
           location={this.state.location}
+          addFavorite={this.addFavorite}
         />
       </div>
        
