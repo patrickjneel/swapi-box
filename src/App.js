@@ -26,7 +26,7 @@ class App extends Component {
   }
 
   addFavorite() {
-    console.log('favorite')
+    
   }
 
   async componentDidMount() {
@@ -79,7 +79,7 @@ class App extends Component {
     const planetRes = planet.residents;
     const planetFetch = await this.planetResidents(planetRes);
 
-    return Object.assign({name: planet.name}, {terrrain: planet.terrain}, {climate: planet.climate}, {population: planet.population}, {residents: planetFetch});
+    return Object.assign({name: planet.name}, {terrrain: planet.terrain}, {climate: planet.climate}, {population: planet.population}, {residents: planetFetch });
     })
 
     return Promise.all(mappedPlanets)

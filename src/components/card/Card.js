@@ -6,20 +6,24 @@ const Card = ( {itemData, location, addFavorite} ) => {
   let mapped;
 
   if(location === 'planets') {
+    if(itemData.residents.length) {
     mapped = itemData.residents.map(people => {
       return <div>{people}</div>
 
     })
-    if(!itemData.residents){
-      return 0;
+      
+    } else {
+      mapped = 0;
     }
-  }
 
+  }
+ 
   return (
     <div className="card">
     <div className="top-card">
       <h3>{itemData.name}</h3>
       <img 
+        className="imperial"
         onClick={() => addFavorite()}
         src={Imperial_Emblem}/>
     </div>
