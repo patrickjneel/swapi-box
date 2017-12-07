@@ -92,7 +92,7 @@ class App extends Component {
   }
   
   render() {
-    console.log(this.state.planets)
+    
     const arrayToRender = this.state.location;
 
     return (
@@ -109,6 +109,7 @@ class App extends Component {
         />
         <CardContainer 
           itemData={this.state[arrayToRender]}
+          location={this.state.location}
         />
       </div>
        

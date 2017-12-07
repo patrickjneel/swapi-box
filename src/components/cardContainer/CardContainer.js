@@ -1,16 +1,19 @@
 import React from 'react';
 import Card from '../card/Card';
 
-const CardContainer = ({itemData}) => {
-  const persons = itemData.map(person => {
+const CardContainer = ({itemData, location}) => {
+  const persons = itemData.map(card => {
     return <Card
-            key={person.name}
-            name={person.name}
-            planet={person.homeworld}
-            population={person.population}
-            species={person.species}
+            itemData={card}
+            key={card.name}
+            location={location}
+            name={card.name}
+            planet={card.homeworld}
+            population={card.population}
+            species={card.species}
            />
   })
+  
   return (
      <div className="container">
      {persons}

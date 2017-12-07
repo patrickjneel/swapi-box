@@ -16,7 +16,7 @@ const Scrolling = ({film}) => {
     <div className="scrolling-area">
      <div className="scroll-text">
         <h3>{title}</h3>
-       <h5>{epNumerial[episodeNumber]}</h5>
+       <h5>EPISODE {epNumerial[episodeNumber]}</h5>
         <h4>{crawl}</h4>
      </div>
     </div>
