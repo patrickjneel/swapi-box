@@ -16,7 +16,7 @@
 .scroll-text {
   animation: scroll-text 175s linear;
   animation-iteration-count: infinite;
-  font-size: 24px;
+  font-size: 40px;
   position: relative;
   text-align: center;
   top: -100px;
@@ -31,7 +31,7 @@ h5 {
 
 @keyframes scroll-text {
   0% {
-    top: 300px;
+    top: 500px;
     transform: rotateX(20deg) translateZ(0); }
   100% {
     top: -5000px;

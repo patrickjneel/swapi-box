@@ -3,7 +3,6 @@ import './scrolling-text.css';
 
 const Scrolling = ({film}) => {
   const { title, crawl, episodeNumber } = film;
-  console.log(film)
   const epNumerial = {
       1: 'I',
       2: 'II',

@@ -24,12 +24,6 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    // const randFilm = Math.floor(Math.random() * (7) + 1);
-    // const fetchedData = await fetch(`https://swapi.co/api/films/${randFilm}/`);
-    // const data = await fetchedData.json();
-    // const title = data.title
-    // const crawl = data.opening_crawl
-    // const episodeNumber = data.episode_id
     const film = await this.fetchFilm();
     const people =  await this.fetchPeople()
     const vehicles = await this.fetchVehicles();
@@ -53,6 +47,7 @@ class App extends Component {
       let homeWorldData = await homeWorldFetch.json();
       let speciesFetch = await fetch (person.species);
       let speciesData = await speciesFetch.json();
+
       return Object.assign({}, {homeworld: homeWorldData.name}, {name:person.name}, {species:speciesData.name} , {population: homeWorldData.population})
 
     });
@@ -76,23 +71,28 @@ class App extends Component {
     const planetData = await planetFetch.json();
     const mappedPlanets = planetData.results.map(async(planet) => {
     const planetRes = planet.residents;
-    const planetFetch = await this.planetResidents(planetRes)
-    return Object.assign({name: planet.name}, {terrrain: planet.terrain}, {climate: planet.climate}, {population: planet.population}, {residents: planet.residents})
+    const planetFetch = await this.planetResidents(planetRes);
+
+    return Object.assign({name: planet.name}, {terrrain: planet.terrain}, {climate: planet.climate}, {population: planet.population}, {residents: planetFetch});
     })
+
     return Promise.all(mappedPlanets)
   }
 
   async planetResidents(planetRes) {
     const residents = planetRes.map(async(resident) => {
-    const fetchRes = await fetch(resident)
-    const resData = await fetchRes.json();
-    return resData.name 
+    const fetchResident = await fetch(resident);
+    const residentData = await fetchResident.json();
+
+    return residentData.name
+
     })
+
     return Promise.all(residents)
   }
   
   render() {
-    console.log(this.state.title)
+    console.log(this.state.planets)
     const arrayToRender = this.state.location;
 
     return (
