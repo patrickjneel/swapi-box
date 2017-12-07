@@ -2,7 +2,14 @@ import React from 'react';
 import './card.css';
 import Imperial_Emblem from '../../Imperial_Emblem.svg';
 const Card = ( {itemData, location, addFavorite} ) => {
-  
+console.log(itemData.residents)
+  let mapped;
+  if(itemData === 'planets') {
+    let mapped = itemData.residents.map(people => {
+      console.log(people)
+    })
+  }
+
   return (
     <div className="card">
     <div className="top-card">
@@ -24,7 +31,9 @@ const Card = ( {itemData, location, addFavorite} ) => {
         <div className="card-data">
           <h4>Terrain: {itemData.terrrain}</h4>
           <h4>Climate: {itemData.climate}</h4>
-          <h5>Residents: {itemData.resdients}</h5>
+          <h4> Residents: {mapped}</h4>
+          
+          
         </div>
       }
       {

@@ -9,10 +9,6 @@ const CardContainer = ({itemData, location, addFavorite}) => {
             key={card.name}
             addFavorite={addFavorite}
             location={location}
-            name={card.name}
-            planet={card.homeworld}
-            population={card.population}
-            species={card.species}
            />
   })
   
