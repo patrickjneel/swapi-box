@@ -6,6 +6,7 @@ const Card = ( {itemData, location} ) => {
   return (
     <div className="card">
       <h3>Name: {itemData.name}</h3>
+      <img src="./src/components/public/Imperial_Emblem.svg" />
       { 
         location === 'people' &&
         <div className="card-data">
@@ -36,11 +37,3 @@ const Card = ( {itemData, location} ) => {
 }
 
 export default Card;
-//class:
-"wheeled"
-model:
-"Digger Crawler"
-name:
-"Sand Crawler"
-passengers:
-"30"
