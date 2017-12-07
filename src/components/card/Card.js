@@ -2,11 +2,14 @@ import React from 'react';
 import './card.css';
 import Imperial_Emblem from '../../Imperial_Emblem.svg';
 const Card = ( {itemData, location, addFavorite} ) => {
-console.log(itemData.residents)
+
   let mapped;
-  if(itemData === 'planets') {
-    let mapped = itemData.residents.map(people => {
-      console.log(people)
+  if(location === 'planets') {
+    mapped = itemData.residents.map(people => {
+      return <div>{people}</div>
+      if(!people) {
+        return <div>N/A</div>
+      }
     })
   }
 
@@ -31,7 +34,7 @@ console.log(itemData.residents)
         <div className="card-data">
           <h4>Terrain: {itemData.terrrain}</h4>
           <h4>Climate: {itemData.climate}</h4>
-          <h4> Residents: {mapped}</h4>
+          <h4>Residents: {mapped}</h4>
           
           
         </div>

@@ -18,7 +18,8 @@
     background-color: #f8f9f4;
     height: 300px; }
     .card .card-data h4 {
-      padding: 10px; }
+      padding: 10px;
+      margin: 0px; }
   .card .h3 {
     margin-left: 10px;
     font-size: 16px; }
