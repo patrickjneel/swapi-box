@@ -2,19 +2,19 @@ import React from 'react';
 import './header.css';
 
 
-const Header = ({fetchPeople}) => {
+const Header = ({upDateData}) => {
   return (
     <div className="header">
-      <button onClick={() => fetchPeople()}>
+      <button onClick={(event) => upDateData(event)}>
        People
       </button>
-      <button>
+      <button onClick={(event) => upDateData(event)}>
        Planets
       </button>
-      <button>
+      <button onClick={(event) => upDateData(event)}>
        Vehicles
       </button>
-      <button>
+      <button onClick={(event) => upDateData(event)}>
        Favorites
       </button>
     </div>

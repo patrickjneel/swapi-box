@@ -3,7 +3,6 @@ import './App.css';
 import Scrolling from './components/scrolling-text/Scrolling-text';
 import Header from './components/header/Header';
 import CardContainer from './components/cardContainer/CardContainer';
-import Card from './components/card/Card';
 
 class App extends Component {
   constructor() {
@@ -12,10 +11,18 @@ class App extends Component {
       title: '',
       crawl: '',
       episodeNumber: '',
-      people: []
+      people: [],
+      vehicles: [],
+      planets: [],
+      location: 'people'
   
     }
-    this.fetchPeople = this.fetchPeople.bind(this);
+      this.upDateData = this.upDateData.bind(this)    
+  }
+
+  upDateData(event) {
+    this.setState({location: event.target.innerText.toLowerCase()})
+    
   }
 
   async componentDidMount() {
@@ -25,8 +32,10 @@ class App extends Component {
     const title = data.title
     const crawl = data.opening_crawl
     const episodeNumber = data.episode_id
-    const people = await this.fetchPeople()
-    this.setState({ title, crawl, episodeNumber, people })
+    const people =  await this.fetchPeople()
+    const vehicles = await this.fetchVehicles();
+    const planets =  await this.fetchPlanets();
+    this.setState({ title, crawl, episodeNumber, people, vehicles, planets })
   }
 
   async fetchPeople() {
@@ -41,10 +50,46 @@ class App extends Component {
       return Object.assign({}, {homeworld: homeWorldData.name}, {name:person.name}, {species:speciesData.name} , {population: homeWorldData.population})
 
     });
-        return Promise.all(mappedPeople)
+        return Promise.all(mappedPeople);
+  }
+
+  async fetchVehicles() {
+    const vehicleFetch = await fetch('https://swapi.co/api/vehicles/');
+    const vehicleData = await vehicleFetch.json();
+    const vehicleResults = await vehicleData.results;
+    const vehicleMapped =  vehicleResults.map(vehicle => {
+   
+      return Object.assign({}, {name: vehicle.name}, {model: vehicle.model}, {class: vehicle.vehicle_class}, {passengers: vehicle.passengers})
+    })
+     
+      return Promise.all(vehicleMapped);
+  }
+
+  async fetchPlanets() {
+    const planetFetch = await fetch('https://swapi.co/api/planets/');
+    const planetData = await planetFetch.json();
+    const mappedPlanets = planetData.results.map(async(planet) => {
+    const planetRes = planet.residents;
+    const planetFetch = await this.planetResidents(planetRes)
+    return Object.assign({name: planet.name}, {terrrain: planet.terrain}, {climate: planet.climate}, {population: planet.population}, {residents: ''})
+    })
+    return Promise.all(mappedPlanets)
+  }
+
+  async planetResidents(planetRes) {
+    const residents = planetRes.map(async(resident) => {
+    const fetchRes = await fetch(resident)
+    const resData = await fetchRes.json();
+    return resData.name 
+    })
+    return Promise.all(residents)
   }
   
   render() {
+    console.log(this.state)
+
+    const arrayToRender = this.state.location;
+
     return (
       <div className="App">
       <div className="top">
@@ -56,10 +101,10 @@ class App extends Component {
       </div>
       <div className="bottom">
         <Header 
-          fetchPeople={this.fetchPeople}
+          upDateData={this.upDateData}
         />
         <CardContainer 
-          peopleData={this.state.people}
+          peopleData={this.state[arrayToRender]}
         />
       </div>
        
