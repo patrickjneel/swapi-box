@@ -14,6 +14,12 @@
     width: 321px; }
     .card .top-card h3 {
       padding-left: 10px; }
+    .card .top-card .imperial {
+      padding: 10px 10px;
+      height: 50px;
+      width: 50px;
+      color: #feda4a;
+      fill: #feda4a; }
   .card .card-data {
     background-color: #f8f9f4;
     height: 342px; }
@@ -26,7 +32,3 @@
   .card .h3 {
     margin-left: 10px;
     font-size: 16px; }
-  .card img {
-    padding: 10px 10px;
-    height: 50px;
-    width: 50px; }

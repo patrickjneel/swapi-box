@@ -23,6 +23,7 @@ const Card = ( {itemData, location, addFavorite} ) => {
     <div className="top-card">
       <h3>{itemData.name}</h3>
       <img 
+        className="imperial"
         onClick={() => addFavorite()}
         src={Imperial_Emblem}/>
     </div>
