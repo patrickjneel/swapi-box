@@ -12,7 +12,8 @@ class App extends Component {
       crawl: '',
       episodeNumber: '',
       people: [],
-      vehicle: []
+      vehicle: [],
+      planet: []
   
     }
     this.fetchPeople = this.fetchPeople.bind(this);
@@ -26,8 +27,9 @@ class App extends Component {
     const crawl = data.opening_crawl
     const episodeNumber = data.episode_id
     const people =  await this.fetchPeople()
-    const vehicle = this.fetchVehicles();
-    this.setState({ title, crawl, episodeNumber, people, vehicle })
+    const vehicle = await this.fetchVehicles();
+    const planet =  await this.fetchPlanets();
+    this.setState({ title, crawl, episodeNumber, people, vehicle, planet })
   }
 
   async fetchPeople() {
@@ -49,15 +51,32 @@ class App extends Component {
     const vehicleFetch = await fetch('https://swapi.co/api/vehicles/');
     const vehicleData = await vehicleFetch.json();
     const vehicleResults = await vehicleData.results;
-    const vehicleMapped = vehicleResults.map(vehicle => {
-    let vehicleName = vehicle.name;
-    let vehicleModel = vehicle.model;
-    let vehicleClass = vehicle.vehicle_class;
-    let passengers = vehicle.passengers;
-      return Object.assign({}, {name: vehicleName}, {model: vehicleModel}, {class: vehicleClass}, {passengers: passengers})
+    const vehicleMapped =  vehicleResults.map(vehicle => {
+   
+      return Object.assign({}, {name: vehicle.name}, {model: vehicle.model}, {class: vehicle.vehicle_class}, {passengers: vehicle.passengers})
     })
      
       return Promise.all(vehicleMapped);
+  }
+
+  async fetchPlanets() {
+    const planetFetch = await fetch('https://swapi.co/api/planets/');
+    const planetData = await planetFetch.json();
+    const mappedPlanets = planetData.results.map(async(planet) => {
+    const planetRes = planet.residents;
+    const planetFetch = await this.planetResidents(planetRes)
+    return Object.assign({name: planet.name}, {terrrain: planet.terrain}, {climate: planet.climate}, {population: planet.population}, {residents: ''})
+    })
+    return Promise.all(mappedPlanets)
+  }
+
+  async planetResidents(planetRes) {
+    const residents = planetRes.map(async(resident) => {
+    const fetchRes = await fetch(resident)
+    const resData = await fetchRes.json();
+    return resData.name 
+    })
+    return Promise.all(residents)
   }
   
   render() {
