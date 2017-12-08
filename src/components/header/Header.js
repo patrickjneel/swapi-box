@@ -1,5 +1,6 @@
 import React from 'react';
 import './header.css';
+import PropTypes from 'prop-types';
 
 
 const Header = ({upDateData}) => {
@@ -22,3 +23,7 @@ const Header = ({upDateData}) => {
 };
 
 export default Header;
+
+Header.propTypes = {
+  upDateData: PropTypes.func
+};

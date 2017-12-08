@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from '../card/Card';
 import './cardContainer.css';
+import PropTypes from 'prop-types';
 
 const CardContainer = ({itemData, location, addFavorite}) => {
   const persons = itemData.map(card => {
@@ -20,3 +21,9 @@ const CardContainer = ({itemData, location, addFavorite}) => {
 };
 
 export default CardContainer;
+
+CardContainer.propTypes = {
+  itemData: propTypes.object,
+  location: propTypes.string,
+  addFavorite: propTypes.func
+};
