@@ -3,8 +3,7 @@ import './card.css';
 import imperialEmblem from '../../imperialEmblem.svg';
 import PropTypes from 'prop-types';
 
-const Card = ( {itemData, location, addFavorite} ) => {
-
+const Card = ( {itemData, location, updateFavorite} ) => {
   let mapped;
 
   if (location === 'planets') {
@@ -23,7 +22,7 @@ const Card = ( {itemData, location, addFavorite} ) => {
         <h3>{itemData.name}</h3>
         <img 
           className="imperial"
-          onClick={() => addFavorite()}
+          onClick={() => updateFavorite(itemData)}
           src={imperialEmblem}/>
       </div>
       { 
