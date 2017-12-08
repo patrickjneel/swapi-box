@@ -8,5 +8,5 @@ describe('CardContainer Test', () => {
     const renderedContainer = shallow(<CardContainer />);
 
     expect(renderedContainer).toBeDefined();
-  })
-})
+  });
+});

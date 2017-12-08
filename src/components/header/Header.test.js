@@ -8,5 +8,5 @@ describe('Header Test', () => {
     const renderedHeader = shallow(<Header />);
 
     expect(renderedHeader).toBeDefined();
-  })
-})
+  });
+});

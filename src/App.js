@@ -8,7 +8,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      film: '',
+      film: {},
       people: [],
       vehicles: [],
       planets: [],
@@ -106,7 +106,6 @@ class App extends Component {
       <div className="top">
         <Scrolling 
           film={this.state.film}
-          
         />
       </div>
       <div className="bottom">
@@ -119,7 +118,6 @@ class App extends Component {
           addFavorite={this.addFavorite}
         />
       </div>
-       
       </div>
     );
   }

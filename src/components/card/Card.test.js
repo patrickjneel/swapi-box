@@ -7,5 +7,5 @@ describe('Card Test', () => {
     const renderedCard = shallow(<Card />);
 
     expect(renderedCard).toBeDefined();
-  })
-})
+  });
+});
