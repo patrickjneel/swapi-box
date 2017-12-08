@@ -3,10 +3,8 @@ import Card from '../card/Card';
 import './cardContainer.css';
 import PropTypes from 'prop-types';
 
-const CardContainer = ({itemData, location, updateFavorite, favorites}) => {
-  // const favorites = favorties.map(favorite => {
-  //   return <Card />
-  // })
+const CardContainer = ({itemData, location, updateFavorite}) => {
+  
   const persons = itemData.map(card => {
     return <Card
       itemData={card}
@@ -29,4 +27,5 @@ CardContainer.propTypes = {
   itemData: PropTypes.array,
   location: PropTypes.string,
   updateFavorite: PropTypes.func
+
 };

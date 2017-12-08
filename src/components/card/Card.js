@@ -9,7 +9,7 @@ const Card = ( {itemData, location, updateFavorite} ) => {
   if (location === 'planets') {
     if (itemData.residents.length) {
       mapped = itemData.residents.map(people => {
-        return <div>{people}</div>;
+        return <div key={people}>{people}</div>;
       });
     } else {
       mapped = 0;
