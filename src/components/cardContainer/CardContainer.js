@@ -25,5 +25,5 @@ export default CardContainer;
 CardContainer.propTypes = {
   itemData: PropTypes.array,
   location: PropTypes.string,
-  addFavorite: PropTypes.func
+  updateFavorite: PropTypes.func
 };

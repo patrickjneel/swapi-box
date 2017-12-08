@@ -63,5 +63,5 @@ export default Card;
 Card.propTypes = {
   itemData: PropTypes.object,
   location: PropTypes.string,
-  addFavorite: PropTypes.func
+  updateFavorite: PropTypes.func
 };
