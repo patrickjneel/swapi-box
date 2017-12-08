@@ -1,12 +1,14 @@
 import React from 'react';
 import './card.css';
-import Imperial_Emblem from '../../Imperial_Emblem.svg';
+import imperialEmblem from '../../imperialEmblem.svg';
+import PropTypes from 'prop-types';
+
 const Card = ( {itemData, location, addFavorite} ) => {
 
   let mapped;
 
-  if(location === 'planets') {
-    if(itemData.residents.length) {
+  if (location === 'planets') {
+    if (itemData.residents.length) {
       mapped = itemData.residents.map(people => {
         return <div>{people}</div>;
       });
@@ -22,7 +24,7 @@ const Card = ( {itemData, location, addFavorite} ) => {
         <img 
           className="imperial"
           onClick={() => addFavorite()}
-          src={Imperial_Emblem}/>
+          src={imperialEmblem}/>
       </div>
       { 
         location === 'people' &&
@@ -53,3 +55,9 @@ const Card = ( {itemData, location, addFavorite} ) => {
 };
 
 export default Card;
+
+Card.propTypes ={
+  itemData: PropTypes.object,
+  location: PropTypes.string,
+  addFavorite: PropTypes.func
+};
