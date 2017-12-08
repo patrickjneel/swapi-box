@@ -49,6 +49,11 @@ const Card = ( {itemData, location, updateFavorite} ) => {
           <h4>Passengers:</h4> <h5>{itemData.passengers}</h5>
         </div>
       }
+      {
+        location === 'favorites' &&
+        <div className="card-data">
+        </div>
+      }
     </div>
   );
 };
