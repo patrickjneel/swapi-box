@@ -126,7 +126,7 @@ class App extends Component {
           itemData={this.state[arrayToRender]}
           location={this.state.location}
           updateFavorite={this.updateFavorite}
-          favorites={this.state.location}
+          favorites={this.state.favorites}
         />
       </div>
       </div>

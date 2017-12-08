@@ -3,7 +3,7 @@ import './card.css';
 import imperialEmblem from '../../imperialEmblem.svg';
 import PropTypes from 'prop-types';
 
-const Card = ( {itemData, location, updateFavorite} ) => {
+const Card = ( {itemData, location, updateFavorite, type} ) => {
   let mapped;
 
   if (location === 'planets') {
@@ -21,7 +21,7 @@ const Card = ( {itemData, location, updateFavorite} ) => {
       <div className="top-card">
         <h3>{itemData.name}</h3>
         <img 
-          className="imperial"
+          className={type}
           onClick={() => updateFavorite(itemData)}
           src={imperialEmblem}/>
       </div>
