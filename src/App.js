@@ -26,7 +26,7 @@ class App extends Component {
   }
 
   updateFavorite(card) {
-    let favorites = Object.assign([], this.state.favorites)
+    let favorites = this.state.favorites;
     
     const findInFavorites = favorites.find(favorite => favorite.name === card.name)
     if(findInFavorites) {

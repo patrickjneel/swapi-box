@@ -26,7 +26,7 @@ const Card = ( {itemData, location, updateFavorite} ) => {
           src={imperialEmblem}/>
       </div>
       { 
-        location === 'people' &&
+        itemData.homeworld &&
         <div className="card-data">
           <h4>Planet:</h4> <h5>{itemData.homeworld}</h5>
           <h4>Population:</h4> <h5>{itemData.population}</h5>
@@ -34,7 +34,7 @@ const Card = ( {itemData, location, updateFavorite} ) => {
         </div>
       }
       {
-        location === 'planets' &&
+        itemData.climate &&
         <div className="card-data">
           <h4>Terrain:</h4> <h5>{itemData.terrrain}</h5>
           <h4>Climate:</h4> <h5>{itemData.climate}</h5>
@@ -42,18 +42,14 @@ const Card = ( {itemData, location, updateFavorite} ) => {
         </div>
       }
       {
-        location === 'vehicles' &&
+        itemData.model &&
         <div className="card-data">
           <h4>Model:</h4> <h5>{itemData.model}</h5>
           <h4>Class:</h4> <h5>{itemData.class}</h5>
           <h4>Passengers:</h4> <h5>{itemData.passengers}</h5>
         </div>
       }
-      {
-        location === 'favorites' &&
-        <div className="card-data">
-        </div>
-      }
+      
     </div>
   );
 };
