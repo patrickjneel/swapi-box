@@ -18,7 +18,7 @@ const Header = ({upDateData}) => {
        Favorites
       </button>
     </div>
-  )
-}
+  );
+};
 
 export default Header;
