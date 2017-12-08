@@ -7,26 +7,23 @@ const Card = ( {itemData, location, addFavorite} ) => {
 
   if(location === 'planets') {
     if(itemData.residents.length) {
-    mapped = itemData.residents.map(people => {
-      return <div>{people}</div>
-
-    })
-      
+      mapped = itemData.residents.map(people => {
+        return <div>{people}</div>;
+      });
     } else {
       mapped = 0;
     }
-
   }
  
   return (
     <div className="card">
-    <div className="top-card">
-      <h3>{itemData.name}</h3>
-      <img 
-        className="imperial"
-        onClick={() => addFavorite()}
-        src={Imperial_Emblem}/>
-    </div>
+      <div className="top-card">
+        <h3>{itemData.name}</h3>
+        <img 
+          className="imperial"
+          onClick={() => addFavorite()}
+          src={Imperial_Emblem}/>
+      </div>
       { 
         location === 'people' &&
         <div className="card-data">
@@ -46,14 +43,13 @@ const Card = ( {itemData, location, addFavorite} ) => {
       {
         location === 'vehicles' &&
         <div className="card-data">
-         <h4>Model:</h4> <h5>{itemData.model}</h5>
-         <h4>Class:</h4> <h5>{itemData.class}</h5>
-         <h4>Passengers:</h4> <h5>{itemData.passengers}</h5>
-
+          <h4>Model:</h4> <h5>{itemData.model}</h5>
+          <h4>Class:</h4> <h5>{itemData.class}</h5>
+          <h4>Passengers:</h4> <h5>{itemData.passengers}</h5>
         </div>
       }
     </div>
-  )
-}
+  );
+};
 
 export default Card;
