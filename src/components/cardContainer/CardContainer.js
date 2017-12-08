@@ -23,7 +23,7 @@ const CardContainer = ({itemData, location, addFavorite}) => {
 export default CardContainer;
 
 CardContainer.propTypes = {
-  itemData: PropTypes.object,
+  itemData: PropTypes.array,
   location: PropTypes.string,
   addFavorite: PropTypes.func
 };
