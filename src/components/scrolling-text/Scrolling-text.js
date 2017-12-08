@@ -1,5 +1,6 @@
 import React from 'react';
 import './scrolling-text.css';
+import PropTypes from 'prop-types';
 
 const Scrolling = ({film}) => {
   const { title, crawl, episodeNumber } = film;
@@ -25,5 +26,9 @@ const Scrolling = ({film}) => {
 };
 
 export default Scrolling;
+
+Scrolling.propTypes = {
+  film: PropTypes.object
+};
 
  
