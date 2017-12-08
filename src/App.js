@@ -17,7 +17,7 @@ class App extends Component {
   
     }
       this.upDateData = this.upDateData.bind(this);
-      this.addFavorite = this.addFavorite.bind(this);    
+      this.updateFavorite = this.updateFavorite.bind(this);    
   }
 
   upDateData(event) {
@@ -25,9 +25,19 @@ class App extends Component {
     
   }
 
-  addFavorite() {
+  updateFavorite(card) {
+    let favorites = Object.assign([], this.state.favorites)
     
+    const findInFavorites = favorites.find(favorite => favorite.name === card.name)
+    if(findInFavorites) {
+      favorites = favorites.filter(favorite => favorite.name !== card.name)
+    } else {
+      favorites.push(card)
+    }
+    this.setState({favorites})
+    //toggle update the class and wire up the favroties view
   }
+
 
   async componentDidMount() {
     const film = await this.fetchFilm();
@@ -115,7 +125,8 @@ class App extends Component {
         <CardContainer 
           itemData={this.state[arrayToRender]}
           location={this.state.location}
-          addFavorite={this.addFavorite}
+          updateFavorite={this.updateFavorite}
+          favorites={this.state.location}
         />
       </div>
       </div>
