@@ -3,31 +3,88 @@
 
  const {fetchFilm, fetchPeople, fetchVehicles, fetchPlanets, planetResidents} = API;
 
- const {peopleData, planetData, vehicleData, filmData, favorites} = mockApi;
+ const {peopleData, planetData, vehicleData} = mockApi;
 
 
 
-describe('Fetch Tests', () => {
+describe('Fetch People Tests', () => {
+
   beforeEach(() => {
     window.fetch = 
       jest.fn().mockImplementation(() => 
         Promise.resolve({
           status: 200,
-          json: () => Promise.resolve({
-            results: peopleData
-          }),
+          json: () => Promise.resolve(
+            {results: peopleData.results}
+          ),
         }))
       });
   
 
-  it('should have the correct params', async () => {
-    const mockData = filmData;
+  it('should fetch people data', async () => {
+    const mockData = peopleData;
     const expected = [
     'https://swapi.co/api/people/',
-     
     ];
-    await fetchPeople();
+
+    fetchPeople();
     expect(window.fetch).toHaveBeenCalledWith(...expected);
   });
 
 });
+
+describe('Fetch Vehicle Tests', () => {
+
+  beforeEach(() => {
+    window.fetch = 
+      jest.fn().mockImplementation(() => 
+        Promise.resolve({
+          status: 200,
+          json: () => Promise.resolve(
+            {results: vehicleData.results}
+          ),
+        }))
+      });
+  
+
+  it('should fetch vehicle data', async () => {
+  const mockData = vehicleData;
+  const expected = [
+   'https://swapi.co/api/vehicles/',
+  ];
+  fetchVehicles();
+  expect(window.fetch).toHaveBeenCalledWith(...expected)
+ })
+
+});
+
+describe('Fetch Planet Tests', () => {
+
+  beforeEach(() => {
+    window.fetch = 
+      jest.fn().mockImplementation(() => 
+        Promise.resolve({
+          status: 200,
+          json: () => Promise.resolve(
+            {results: planetData}
+          ),
+        }))
+      });
+  
+
+  it.skip('should fetch planet data', async () => {
+  const mockData = planetData;
+  const expected = [
+  'https://swapi.co/api/planets/',
+  ];
+  planetResidents();
+  fetchPlanets();
+  expect(window.fetch).toHaveBeenCalledWith(...expected)
+ })
+
+});
+
+ 
+
+ 
+
