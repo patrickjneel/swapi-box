@@ -6,7 +6,7 @@ try {
     return Object.assign({}, {title: data.title}, {crawl: data.opening_crawl}, {episodeNumber: data.episode_id})
   }
  catch (e) {
-  const error = new Error('didnt work to well');
+  const error = new Error('failed in film fetch');
   return error;
   }
 }
@@ -28,7 +28,7 @@ try {
         return Promise.all(mappedPeople);
     }
     catch (e) {
-      const error = new Error('didnt work to well');
+      const error = new Error('failed in people fetch');
       return error;
     }
   }
@@ -46,7 +46,7 @@ try {
       return Promise.all(vehicleMapped);
     }
     catch (e) {
-      const error = new Error('didnt work to well');
+      const error = new Error('failed in vehicle fetch');
       return error;
     }
   }

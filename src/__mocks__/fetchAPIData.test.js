@@ -37,6 +37,18 @@ describe('Fetch People Tests', () => {
     expect(fetchPeople()).resolves.toEqual(expectedResponse);
   })
 
+  it('should throw an error if it recieves bad status code', async () => {
+  window.fetch = 
+  jest.fn().mockImplementation(() => 
+        Promise.resolve({
+          status: 500,  
+        }));
+  const expectedError = Error('failed in people fetch');
+  const getPeopleFetch = await fetchPeople();
+  expect(getPeopleFetch).toEqual(expectedError);
+
+ })
+
 });
 
 describe('Fetch Vehicle Tests', () => {
@@ -67,6 +79,18 @@ describe('Fetch Vehicle Tests', () => {
 
     expect(fetchVehicles()).resolves.toEqual(expectedResponse);
   })
+
+  it('should throw an error if it recieves bad status code', async () => {
+  window.fetch = 
+  jest.fn().mockImplementation(() => 
+        Promise.resolve({
+          status: 500,  
+        }));
+  const expectedError = Error('failed in vehicle fetch');
+  const getVehiclesFetch = await fetchVehicles();
+  expect(getVehiclesFetch).toEqual(expectedError);
+
+ })
 
 });
 
@@ -99,13 +123,15 @@ describe('Fetch Planet Tests', () => {
     expect(fetchPlanets()).resolves.toEqual(expectedResponse);
   })
 
- it.only('should throw an error if the ', () => {
+ it('should throw an error if it recieves bad status code', async () => {
   window.fetch = 
   jest.fn().mockImplementation(() => 
         Promise.resolve({
           status: 500,  
         }));
-  expect(fetchPlanets()).rejects.toEqual(Error('failed in planet fetch'));
+  const expectedError = Error('failed in planet fetch');
+  const getPlanetFetch = await fetchPlanets();
+  expect(getPlanetFetch).toEqual(expectedError);
 
  })
 
