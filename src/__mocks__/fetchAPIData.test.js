@@ -99,6 +99,16 @@ describe('Fetch Planet Tests', () => {
     expect(fetchPlanets()).resolves.toEqual(expectedResponse);
   })
 
+ it.only('should throw an error if the ', () => {
+  window.fetch = 
+  jest.fn().mockImplementation(() => 
+        Promise.resolve({
+          status: 500,  
+        }));
+  expect(fetchPlanets()).rejects.toEqual(Error('failed in planet fetch'));
+
+ })
+
 
 });
 

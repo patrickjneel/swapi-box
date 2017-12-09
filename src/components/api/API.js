@@ -66,7 +66,7 @@ try {
     return Promise.all(mappedPlanets)
     }
     catch (e) {
-      const error = new Error('didnt work to well');
+      const error = new Error('failed in planet fetch');
       return error;
     }
   }
@@ -84,7 +84,7 @@ try {
     return Promise.all(residents)
     }
     catch (e) {
-      const error = new Error('didnt work to well');
+      const error = new Error('failed in planet fetch');
       return error;
     }
   }
