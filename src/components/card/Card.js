@@ -3,13 +3,13 @@ import './card.css';
 import imperialEmblem from '../../imperialEmblem.svg';
 import PropTypes from 'prop-types';
 
-const Card = ( {itemData, location, updateFavorite} ) => {
+const Card = ( {itemData, location, updateFavorite, type} ) => {
   let mapped;
 
   if (location === 'planets') {
     if (itemData.residents.length) {
       mapped = itemData.residents.map(people => {
-        return <div>{people}</div>;
+        return <div key={people}>{people}</div>;
       });
     } else {
       mapped = 0;
@@ -21,12 +21,12 @@ const Card = ( {itemData, location, updateFavorite} ) => {
       <div className="top-card">
         <h3>{itemData.name}</h3>
         <img 
-          className="imperial"
+          className={type}
           onClick={() => updateFavorite(itemData)}
           src={imperialEmblem}/>
       </div>
       { 
-        location === 'people' &&
+        itemData.homeworld &&
         <div className="card-data">
           <h4>Planet:</h4> <h5>{itemData.homeworld}</h5>
           <h4>Population:</h4> <h5>{itemData.population}</h5>
@@ -34,7 +34,7 @@ const Card = ( {itemData, location, updateFavorite} ) => {
         </div>
       }
       {
-        location === 'planets' &&
+        itemData.climate &&
         <div className="card-data">
           <h4>Terrain:</h4> <h5>{itemData.terrrain}</h5>
           <h4>Climate:</h4> <h5>{itemData.climate}</h5>
@@ -42,13 +42,14 @@ const Card = ( {itemData, location, updateFavorite} ) => {
         </div>
       }
       {
-        location === 'vehicles' &&
+        itemData.model &&
         <div className="card-data">
           <h4>Model:</h4> <h5>{itemData.model}</h5>
           <h4>Class:</h4> <h5>{itemData.class}</h5>
           <h4>Passengers:</h4> <h5>{itemData.passengers}</h5>
         </div>
       }
+      
     </div>
   );
 };
@@ -58,5 +59,5 @@ export default Card;
 Card.propTypes = {
   itemData: PropTypes.object,
   location: PropTypes.string,
-  addFavorite: PropTypes.func
+  updateFavorite: PropTypes.func
 };
