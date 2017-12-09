@@ -12,9 +12,9 @@ describe('Header Test', () => {
 
   it('should receive props', () => {
     const mockFunc = jest.fn();
-    const renderedHeader = shallow(<Header upDateData={mockFunc} />);
-
-    expect(renderedHeader.instance().props.upDateData).toEqual(mockFunc);
+    const renderedHeader = mount(<Header upDateData={mockFunc} />);
+    
+    expect(renderedHeader.props().upDateData).toEqual(mockFunc);
   });
 
   it('should render four buttons', () => {
