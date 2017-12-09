@@ -5,7 +5,7 @@ import App from './App';
 describe('App Test', () => {
 
   it('should be defined', () => {
-  const renderedApp = shallow(<App />);
+  const renderedApp = shallow(<App />, {disableLifeCycleMethods: true});
 
   expect(renderedApp).toBeDefined();
     
