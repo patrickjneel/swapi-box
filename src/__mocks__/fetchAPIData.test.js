@@ -21,7 +21,7 @@ describe('Fetch People Tests', () => {
       });
   
 
-  it('should fetch people data', async () => {
+  it('should be called with the correct params', async () => {
     const mockData = peopleData;
     const expected = [
     'https://swapi.co/api/people/',
@@ -47,7 +47,7 @@ describe('Fetch Vehicle Tests', () => {
       });
   
 
-  it('should fetch vehicle data', async () => {
+  it('should be called with the correct params', async () => {
   const mockData = vehicleData;
   const expected = [
    'https://swapi.co/api/vehicles/',
@@ -66,19 +66,18 @@ describe('Fetch Planet Tests', () => {
         Promise.resolve({
           status: 200,
           json: () => Promise.resolve(
-            {results: planetData}
+            {results: planetData.results}
           ),
         }))
       });
   
 
-  it.skip('should fetch planet data', async () => {
+  it('should be called with the correct params', async () => {
   const mockData = planetData;
   const expected = [
   'https://swapi.co/api/planets/',
   ];
-  planetResidents();
-  fetchPlanets();
+    fetchPlanets();
   expect(window.fetch).toHaveBeenCalledWith(...expected)
  })
 
