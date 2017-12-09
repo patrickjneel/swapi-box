@@ -1,0 +1,208 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Scrolling-text Test should match snap shot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Scrolling
+    film={
+        Object {
+            "crawl": "things arent chill in the galaxy",
+            "episodeNumber": 5,
+            "title": "The Empire Strikes Back",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="scroll-text"
+>
+        <h3>
+                The Empire Strikes Back
+        </h3>
+        <h5>
+                EPISODE 
+                V
+        </h5>
+        <h4>
+                things arent chill in the galaxy
+        </h4>
+</div>,
+      "className": "scrolling-area",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h3>
+            The Empire Strikes Back
+</h3>,
+          <h5>
+            EPISODE 
+            V
+</h5>,
+          <h4>
+            things arent chill in the galaxy
+</h4>,
+        ],
+        "className": "scroll-text",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "The Empire Strikes Back",
+          },
+          "ref": null,
+          "rendered": "The Empire Strikes Back",
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "EPISODE ",
+              "V",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "EPISODE ",
+            "V",
+          ],
+          "type": "h5",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "things arent chill in the galaxy",
+          },
+          "ref": null,
+          "rendered": "things arent chill in the galaxy",
+          "type": "h4",
+        },
+      ],
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="scroll-text"
+>
+          <h3>
+                    The Empire Strikes Back
+          </h3>
+          <h5>
+                    EPISODE 
+                    V
+          </h5>
+          <h4>
+                    things arent chill in the galaxy
+          </h4>
+</div>,
+        "className": "scrolling-area",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h3>
+              The Empire Strikes Back
+</h3>,
+            <h5>
+              EPISODE 
+              V
+</h5>,
+            <h4>
+              things arent chill in the galaxy
+</h4>,
+          ],
+          "className": "scroll-text",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "The Empire Strikes Back",
+            },
+            "ref": null,
+            "rendered": "The Empire Strikes Back",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "EPISODE ",
+                "V",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "EPISODE ",
+              "V",
+            ],
+            "type": "h5",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "things arent chill in the galaxy",
+            },
+            "ref": null,
+            "rendered": "things arent chill in the galaxy",
+            "type": "h4",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+    "disableLifecycleMethods": true,
+  },
+}
+`;

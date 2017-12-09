@@ -50,6 +50,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.film)
     
     const arrayToRender = this.state.location;
 
