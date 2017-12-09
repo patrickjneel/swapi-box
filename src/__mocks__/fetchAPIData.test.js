@@ -1,7 +1,7 @@
- import API from '../components/api/API';
+ import APIFunction from '../components/api/API';
  import mockApi from './mockAPI';
 
- const {fetchFilm, fetchPeople, fetchVehicles, fetchPlanets, planetResidents} = API;
+ const {fetchFilm, fetchPeople, fetchVehicles, fetchPlanets, planetResidents} = APIFunction;
 
  const {peopleData, planetData, vehicleData} = mockApi;
 
@@ -31,6 +31,12 @@ describe('Fetch People Tests', () => {
     expect(window.fetch).toHaveBeenCalledWith(...expected);
   });
 
+  it('should return the data if the status code is good', () => {
+    const expectedResponse = [{"homeworld": undefined, "name": "Luke Skywalker", "population": undefined, "species": undefined}];
+
+    expect(fetchPeople()).resolves.toEqual(expectedResponse);
+  })
+
 });
 
 describe('Fetch Vehicle Tests', () => {
@@ -56,6 +62,12 @@ describe('Fetch Vehicle Tests', () => {
   expect(window.fetch).toHaveBeenCalledWith(...expected)
  })
 
+  it('should return the data if the status code is good', () => {
+    const expectedResponse = [{"class": "wheeled", "model": "Digger Crawler", "name": "Sand Crawler", "passengers": "30"}]
+
+    expect(fetchVehicles()).resolves.toEqual(expectedResponse);
+  })
+
 });
 
 describe('Fetch Planet Tests', () => {
@@ -80,6 +92,13 @@ describe('Fetch Planet Tests', () => {
     fetchPlanets();
   expect(window.fetch).toHaveBeenCalledWith(...expected)
  })
+
+ it('should return the data if the status code is good', () => {
+    const expectedResponse = [{"climate": "temperate", "name": "Alderaan", "population": "2000000000", "residents": [undefined, undefined, undefined], "terrrain": "grasslands, mountains"}]
+
+    expect(fetchPlanets()).resolves.toEqual(expectedResponse);
+  })
+
 
 });
 
