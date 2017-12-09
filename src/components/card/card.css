@@ -22,7 +22,9 @@
       color: #feda4a;
       fill: #feda4a; }
     .card .top-card .favorited {
-      background-color: #feda4a; }
+      background-color: #ED2939;
+      border: 1px solid black;
+      opacity: 0.7; }
   .card .card-data {
     background-color: #f8f9f4;
     height: 342px; }
