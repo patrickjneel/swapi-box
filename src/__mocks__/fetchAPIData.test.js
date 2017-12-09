@@ -6,6 +6,21 @@
  const {peopleData, planetData, vehicleData} = mockApi;
 
 
+describe('Scrolling Text Tests', () => {
+
+  it('should throw an error if it recieves bad status code', async () => {
+  window.fetch = 
+  jest.fn().mockImplementation(() => 
+        Promise.resolve({
+          status: 500,  
+        }));
+  const expectedError = Error('failed in film fetch');
+  const getFilmFetch = await fetchFilm();
+  expect(getFilmFetch).toEqual(expectedError);
+
+ });
+
+});
 
 describe('Fetch People Tests', () => {
 
