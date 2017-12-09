@@ -1,11 +1,18 @@
 async function fetchFilm() {
+try {
     const randFilm = Math.floor(Math.random() * (7) + 1);
     const fetchedData = await fetch(`https://swapi.co/api/films/${randFilm}/`);
     const data = await fetchedData.json();
     return Object.assign({}, {title: data.title}, {crawl: data.opening_crawl}, {episodeNumber: data.episode_id})
   }
+ catch (e) {
+  const error = new Error('failed in film fetch');
+  return error;
+  }
+}
 
   async function fetchPeople() {
+    try {
     const peopleData = await fetch('https://swapi.co/api/people/')
     const people = await peopleData.json();
     const peopleArray = await people.results;
@@ -19,9 +26,15 @@ async function fetchFilm() {
 
     });
         return Promise.all(mappedPeople);
+    }
+    catch (e) {
+      const error = new Error('failed in people fetch');
+      return error;
+    }
   }
 
   async function fetchVehicles() {
+    try {
     const vehicleFetch = await fetch('https://swapi.co/api/vehicles/');
     const vehicleData = await vehicleFetch.json();
     const vehicleResults = await vehicleData.results;
@@ -31,9 +44,15 @@ async function fetchFilm() {
     })
      
       return Promise.all(vehicleMapped);
+    }
+    catch (e) {
+      const error = new Error('failed in vehicle fetch');
+      return error;
+    }
   }
 
   async function fetchPlanets() {
+    try {
     const planetFetch = await fetch('https://swapi.co/api/planets/');
     const planetData = await planetFetch.json();
     const mappedPlanets = planetData.results.map(async(planet) => {
@@ -45,9 +64,15 @@ async function fetchFilm() {
     })
 
     return Promise.all(mappedPlanets)
+    }
+    catch (e) {
+      const error = new Error('failed in planet fetch');
+      return error;
+    }
   }
 
   async function planetResidents(planetRes) {
+    try {
     const residents = planetRes.map(async(resident) => {
     const fetchResident = await fetch(resident);
     const residentData = await fetchResident.json();
@@ -57,6 +82,11 @@ async function fetchFilm() {
     })
 
     return Promise.all(residents)
+    }
+    catch (e) {
+      const error = new Error('failed in planet fetch');
+      return error;
+    }
   }
 
 export default {fetchFilm, fetchPeople, fetchVehicles, fetchPlanets, planetResidents};

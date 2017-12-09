@@ -9,4 +9,28 @@ describe('Header Test', () => {
 
     expect(renderedHeader).toBeDefined();
   });
+
+  it('should receive props', () => {
+    const mockFunc = jest.fn();
+    const renderedHeader = mount(<Header upDateData={mockFunc} />);
+    
+    expect(renderedHeader.props().upDateData).toEqual(mockFunc);
+  });
+
+  it('should render four buttons', () => {
+    const mockFunc = jest.fn();
+    const renderedHeader = shallow(<Header upDateData={mockFunc} />);
+    expect(renderedHeader.find('button').length).toEqual(4)
+
+  })
+
+  it('should match sanp shot', () => {
+    const mockFunc = jest.fn();
+    const renderedHeader = shallow(<Header upDateData={mockFunc} />);
+
+    expect(renderedHeader).toMatchSnapshot();
+  })
+
 });
+
+
