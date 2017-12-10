@@ -40,7 +40,7 @@ const mockFunc = jest.fn();
     
     const mockLocation = 'people';
     const mockFavs = [];
-    const type= 'imperial'
+    const mockType= 'imperial'
     const renderedCard = mount(
       <Card
         itemData={mockData} 
@@ -53,7 +53,7 @@ const mockFunc = jest.fn();
     expect(renderedCard.props().location).toEqual(mockLocation)
     expect(renderedCard.props().updateFavorite).toEqual(mockFunc)
     expect(renderedCard.props().favorites).toEqual(mockFunc)
-    expect(renderedCard.props().favorites).toEqual(mockFunc)
+    expect(renderedCard.props().type).toEqual(mockType)
   });
 
 
