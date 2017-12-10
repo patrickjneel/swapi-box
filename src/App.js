@@ -20,15 +20,16 @@ class App extends Component {
   
     }
       this.upDateData = this.upDateData.bind(this);
-      this.updateFavorite = this.updateFavorite.bind(this);    
+      this.updateFavorite = this.updateFavorite.bind(this);
+      this.updateFavoriteCount = this.updateFavoriteCount.bind(this)    
   }
 
-  upDateData(event) {
-    this.setState({location: event.target.innerText.toLowerCase()})
-    
+  upDateData(newData) {
+    this.setState({location: newData}) 
   }
 
   updateFavorite(card) {
+
     let favorites = this.state.favorites;
     
     const findInFavorites = favorites.find(favorite => favorite.name === card.name)
@@ -38,7 +39,11 @@ class App extends Component {
       favorites.push(card)
     }
     this.setState({favorites})
-   
+  }
+
+  updateFavoriteCount(favorites) {
+    let count = favorites.length
+    return count
   }
 
   async componentDidMount() {
@@ -63,6 +68,7 @@ class App extends Component {
       <div className="bottom">
         <Header 
           upDateData={this.upDateData}
+          favorites={this.state.favorites.length}
         />
         <CardContainer 
           itemData={this.state[arrayToRender]}

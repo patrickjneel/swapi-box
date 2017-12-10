@@ -7,14 +7,14 @@ describe('Card Test', () => {
 
   it('should be defined', () => {
 const mockFunc = jest.fn();
-    const mockData = [
+    const mockData = 
       {
         homeworld: "Tatooine", 
         name: "Darth Vader", 
         species: "Human", 
         population: "200000"
      }
-    ]
+    
     const mockLocation = 'people';
     const mockFavs = [];
     const renderedCard = shallow(
@@ -30,13 +30,14 @@ const mockFunc = jest.fn();
 
    it('should receive props', () => {
 const mockFunc = jest.fn();
-    const mockData = 
-      {
+    const mockData = [
+       {
         homeworld: "Tatooine", 
         name: "Darth Vader", 
         species: "Human", 
         population: "200000"
-     }
+      }
+     ]
     
     const mockLocation = 'people';
     const mockFavs = [];

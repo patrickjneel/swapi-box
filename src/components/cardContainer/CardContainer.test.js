@@ -4,7 +4,7 @@ import CardContainer from './CardContainer';
 
 describe('CardContainer Test', () => {
 
-  it.skip('should receive props', () => {
+  it('should receive props', () => {
     const mockFunc = jest.fn();
     const mockData = [
       {
@@ -12,7 +12,13 @@ describe('CardContainer Test', () => {
         name: "Darth Vader", 
         species: "Human", 
         population: "200000"
-     }
+     },
+     {
+        homeworld: "Tatooine", 
+        name: "Luke SkyWalker", 
+        species: "Human", 
+        population: "200000"
+      }
     ]
     const mockLocation = 'people';
     const mockFavs = [];
@@ -21,25 +27,26 @@ describe('CardContainer Test', () => {
         itemData={mockData} 
         location={mockLocation} 
         updateFavorite={mockFunc} 
-        favorites={mockFunc}
+        favorites={mockFavs}
       />);
 
-    expect(renderedContainer.props().itemData).toEqual(mockData);
+    expect(renderedContainer.props().itemData).toEqual(mockData)
     expect(renderedContainer.props().location).toEqual(mockLocation)
-    expect(renderedContainer).props().updateFavorite.toEqual(mockFunc)
+    expect(renderedContainer.props().updateFavorite).toEqual(mockFunc)
     expect(renderedContainer.props().favorites).toEqual(mockFavs)
+
   });
 
   it.skip('should match snapShot of CardContainer', () => {
     const mockFunc = jest.fn();
-    const mockData = [
+    const mockData = 
       {
         homeworld: "Tatooine", 
         name: "Darth Vader", 
         species: "Human", 
         population: "200000"
      }
-    ]
+    
     const mockLocation = 'people';
     const mockFavs = [];
     const renderedContainer = shallow(

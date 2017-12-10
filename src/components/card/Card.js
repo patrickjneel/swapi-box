@@ -4,8 +4,8 @@ import imperialEmblem from '../../imperialEmblem.svg';
 import PropTypes from 'prop-types';
 
 const Card = ( {itemData, location, updateFavorite, type} ) => {
+console.log(type)
   let mapped;
-
   if (location === 'planets') {
     if (itemData.residents.length) {
       mapped = itemData.residents.map(people => {
@@ -57,8 +57,8 @@ const Card = ( {itemData, location, updateFavorite, type} ) => {
 export default Card;
 
 Card.propTypes = {
-  itemData: PropTypes.array,
-  location: PropTypes.func,
+  itemData: PropTypes.object,
+  location: PropTypes.string,
   updateFavorite: PropTypes.func,
-  type: PropTypes.func
+  type: PropTypes.string
 };
