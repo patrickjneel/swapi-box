@@ -6,14 +6,14 @@ describe('Card Test', () => {
 
 
   it('should be defined', () => {
-const mockFunc = jest.fn();
+    const mockFunc = jest.fn();
     const mockData = 
       {
         homeworld: "Tatooine", 
         name: "Darth Vader", 
         species: "Human", 
         population: "200000"
-     }
+      };
     
     const mockLocation = 'people';
     const mockFavs = [];
@@ -28,20 +28,20 @@ const mockFunc = jest.fn();
     expect(renderedCard).toBeDefined();
   });
 
-   it('should receive props', () => {
-const mockFunc = jest.fn();
+  it('should receive props', () => {
+    const mockFunc = jest.fn();
     const mockData = [
-       {
+      {
         homeworld: "Tatooine", 
         name: "Darth Vader", 
         species: "Human", 
         population: "200000"
       }
-     ]
+    ];
     
     const mockLocation = 'people';
     const mockFavs = [];
-    const mockType= 'imperial'
+    const mockType= 'imperial';
     const renderedCard = mount(
       <Card
         itemData={mockData} 
@@ -50,27 +50,27 @@ const mockFunc = jest.fn();
         favorites={mockFunc}
         type={mockType}
       />);
-    expect(renderedCard.props().itemData).toEqual(mockData)
-    expect(renderedCard.props().location).toEqual(mockLocation)
-    expect(renderedCard.props().updateFavorite).toEqual(mockFunc)
-    expect(renderedCard.props().favorites).toEqual(mockFunc)
-    expect(renderedCard.props().type).toEqual(mockType)
+    expect(renderedCard.props().itemData).toEqual(mockData);
+    expect(renderedCard.props().location).toEqual(mockLocation);
+    expect(renderedCard.props().updateFavorite).toEqual(mockFunc);
+    expect(renderedCard.props().favorites).toEqual(mockFunc);
+    expect(renderedCard.props().type).toEqual(mockType);
   });
 
 
-   it('should match snap shot', () => {
-const mockFunc = jest.fn();
+  it('should match snap shot', () => {
+    const mockFunc = jest.fn();
     const mockData = 
       {
         homeworld: "Tatooine", 
         name: "Darth Vader", 
         species: "Human", 
         population: "200000"
-     }
+      };
     
     const mockLocation = 'people';
     const mockFavs = [];
-    const type= 'imperial'
+    const type= 'imperial';
     const renderedCard = mount(
       <Card
         itemData={mockData} 
@@ -83,7 +83,5 @@ const mockFunc = jest.fn();
     expect(renderedCard).toMatchSnapshot();
 
   });
-
-
 });
 

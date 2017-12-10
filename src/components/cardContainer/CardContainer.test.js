@@ -12,14 +12,14 @@ describe('CardContainer Test', () => {
         name: "Darth Vader", 
         species: "Human", 
         population: "200000"
-     },
-     {
+      },
+      {
         homeworld: "Tatooine", 
         name: "Luke SkyWalker", 
         species: "Human", 
         population: "200000"
       }
-    ]
+    ];
     const mockLocation = 'people';
     const mockFavs = [];
     const renderedContainer = mount(
@@ -30,10 +30,10 @@ describe('CardContainer Test', () => {
         favorites={mockFavs}
       />);
 
-    expect(renderedContainer.props().itemData).toEqual(mockData)
-    expect(renderedContainer.props().location).toEqual(mockLocation)
-    expect(renderedContainer.props().updateFavorite).toEqual(mockFunc)
-    expect(renderedContainer.props().favorites).toEqual(mockFavs)
+    expect(renderedContainer.props().itemData).toEqual(mockData);
+    expect(renderedContainer.props().location).toEqual(mockLocation);
+    expect(renderedContainer.props().updateFavorite).toEqual(mockFunc);
+    expect(renderedContainer.props().favorites).toEqual(mockFavs);
 
   });
 
@@ -45,7 +45,7 @@ describe('CardContainer Test', () => {
         name: "Darth Vader", 
         species: "Human", 
         population: "200000"
-     }
+      };
     
     const mockLocation = 'people';
     const mockFavs = [];
@@ -58,5 +58,5 @@ describe('CardContainer Test', () => {
       />);
 
     expect(renderedContainer).toMatchSnapshot();
-  })
+  });
 });
