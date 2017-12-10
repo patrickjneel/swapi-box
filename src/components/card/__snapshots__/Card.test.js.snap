@@ -1,0 +1,683 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Test should match snap shot 1`] = `
+ReactWrapper {
+  "length": 1,
+  Symbol(enzyme.__unrendered__): <Card
+    favorites={[Function]}
+    itemData={
+        Object {
+            "homeworld": "Tatooine",
+            "name": "Darth Vader",
+            "population": "200000",
+            "species": "Human",
+          }
+    }
+    location="people"
+    type="imperial"
+    updateFavorite={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "favorites": [Function],
+      "itemData": Object {
+        "homeworld": "Tatooine",
+        "name": "Darth Vader",
+        "population": "200000",
+        "species": "Human",
+      },
+      "location": "people",
+      "type": "imperial",
+      "updateFavorite": [Function],
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": <div
+        class="card"
+>
+        <div
+                class="top-card"
+        >
+                <h3>
+                        Darth Vader
+                </h3>
+                <img
+                        class="imperial"
+                        src="imperialEmblem.svg"
+                />
+        </div>
+        <div
+                class="card-data"
+        >
+                <h4>
+                        Planet:
+                </h4>
+                <h5>
+                        Tatooine
+                </h5>
+                <h4>
+                        Population:
+                </h4>
+                <h5>
+                        200000
+                </h5>
+                <h4>
+                        Species:
+                </h4>
+                <h5>
+                        Human
+                </h5>
+        </div>
+</div>,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="top-card"
+>
+            <h3>
+                        Darth Vader
+            </h3>
+            <img
+                        className="imperial"
+                        onClick={[Function]}
+                        src="imperialEmblem.svg"
+            />
+</div>,
+          <div
+            className="card-data"
+>
+            <h4>
+                        Planet:
+            </h4>
+             
+            <h5>
+                        Tatooine
+            </h5>
+            <h4>
+                        Population:
+            </h4>
+             
+            <h5>
+                        200000
+            </h5>
+            <h4>
+                        Species:
+            </h4>
+             
+            <h5>
+                        Human
+            </h5>
+</div>,
+          undefined,
+          undefined,
+        ],
+        "className": "card",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": <div
+            class="top-card"
+>
+            <h3>
+                        Darth Vader
+            </h3>
+            <img
+                        class="imperial"
+                        src="imperialEmblem.svg"
+            />
+</div>,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h3>
+                Darth Vader
+</h3>,
+              <img
+                className="imperial"
+                onClick={[Function]}
+                src="imperialEmblem.svg"
+/>,
+            ],
+            "className": "top-card",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": <h3>
+                Darth Vader
+</h3>,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Darth Vader",
+              },
+              "ref": null,
+              "rendered": Array [
+                "Darth Vader",
+              ],
+              "type": "h3",
+            },
+            Object {
+              "instance": <img
+                class="imperial"
+                src="imperialEmblem.svg"
+/>,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "imperial",
+                "onClick": [Function],
+                "src": "imperialEmblem.svg",
+              },
+              "ref": null,
+              "rendered": Array [
+                undefined,
+              ],
+              "type": "img",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": <div
+            class="card-data"
+>
+            <h4>
+                        Planet:
+            </h4>
+            <h5>
+                        Tatooine
+            </h5>
+            <h4>
+                        Population:
+            </h4>
+            <h5>
+                        200000
+            </h5>
+            <h4>
+                        Species:
+            </h4>
+            <h5>
+                        Human
+            </h5>
+</div>,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h4>
+                Planet:
+</h4>,
+              " ",
+              <h5>
+                Tatooine
+</h5>,
+              <h4>
+                Population:
+</h4>,
+              " ",
+              <h5>
+                200000
+</h5>,
+              <h4>
+                Species:
+</h4>,
+              " ",
+              <h5>
+                Human
+</h5>,
+            ],
+            "className": "card-data",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": <h4>
+                Planet:
+</h4>,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Planet:",
+              },
+              "ref": null,
+              "rendered": Array [
+                "Planet:",
+              ],
+              "type": "h4",
+            },
+            " ",
+            Object {
+              "instance": <h5>
+                Tatooine
+</h5>,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Tatooine",
+              },
+              "ref": null,
+              "rendered": Array [
+                "Tatooine",
+              ],
+              "type": "h5",
+            },
+            Object {
+              "instance": <h4>
+                Population:
+</h4>,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Population:",
+              },
+              "ref": null,
+              "rendered": Array [
+                "Population:",
+              ],
+              "type": "h4",
+            },
+            " ",
+            Object {
+              "instance": <h5>
+                200000
+</h5>,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "200000",
+              },
+              "ref": null,
+              "rendered": Array [
+                "200000",
+              ],
+              "type": "h5",
+            },
+            Object {
+              "instance": <h4>
+                Species:
+</h4>,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Species:",
+              },
+              "ref": null,
+              "rendered": Array [
+                "Species:",
+              ],
+              "type": "h4",
+            },
+            " ",
+            Object {
+              "instance": <h5>
+                Human
+</h5>,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Human",
+              },
+              "ref": null,
+              "rendered": Array [
+                "Human",
+              ],
+              "type": "h5",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "favorites": [Function],
+        "itemData": Object {
+          "homeworld": "Tatooine",
+          "name": "Darth Vader",
+          "population": "200000",
+          "species": "Human",
+        },
+        "location": "people",
+        "type": "imperial",
+        "updateFavorite": [Function],
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": <div
+          class="card"
+>
+          <div
+                    class="top-card"
+          >
+                    <h3>
+                              Darth Vader
+                    </h3>
+                    <img
+                              class="imperial"
+                              src="imperialEmblem.svg"
+                    />
+          </div>
+          <div
+                    class="card-data"
+          >
+                    <h4>
+                              Planet:
+                    </h4>
+                    <h5>
+                              Tatooine
+                    </h5>
+                    <h4>
+                              Population:
+                    </h4>
+                    <h5>
+                              200000
+                    </h5>
+                    <h4>
+                              Species:
+                    </h4>
+                    <h5>
+                              Human
+                    </h5>
+          </div>
+</div>,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="top-card"
+>
+              <h3>
+                            Darth Vader
+              </h3>
+              <img
+                            className="imperial"
+                            onClick={[Function]}
+                            src="imperialEmblem.svg"
+              />
+</div>,
+            <div
+              className="card-data"
+>
+              <h4>
+                            Planet:
+              </h4>
+               
+              <h5>
+                            Tatooine
+              </h5>
+              <h4>
+                            Population:
+              </h4>
+               
+              <h5>
+                            200000
+              </h5>
+              <h4>
+                            Species:
+              </h4>
+               
+              <h5>
+                            Human
+              </h5>
+</div>,
+            undefined,
+            undefined,
+          ],
+          "className": "card",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": <div
+              class="top-card"
+>
+              <h3>
+                            Darth Vader
+              </h3>
+              <img
+                            class="imperial"
+                            src="imperialEmblem.svg"
+              />
+</div>,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h3>
+                  Darth Vader
+</h3>,
+                <img
+                  className="imperial"
+                  onClick={[Function]}
+                  src="imperialEmblem.svg"
+/>,
+              ],
+              "className": "top-card",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": <h3>
+                  Darth Vader
+</h3>,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Darth Vader",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Darth Vader",
+                ],
+                "type": "h3",
+              },
+              Object {
+                "instance": <img
+                  class="imperial"
+                  src="imperialEmblem.svg"
+/>,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "imperial",
+                  "onClick": [Function],
+                  "src": "imperialEmblem.svg",
+                },
+                "ref": null,
+                "rendered": Array [
+                  undefined,
+                ],
+                "type": "img",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": <div
+              class="card-data"
+>
+              <h4>
+                            Planet:
+              </h4>
+              <h5>
+                            Tatooine
+              </h5>
+              <h4>
+                            Population:
+              </h4>
+              <h5>
+                            200000
+              </h5>
+              <h4>
+                            Species:
+              </h4>
+              <h5>
+                            Human
+              </h5>
+</div>,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h4>
+                  Planet:
+</h4>,
+                " ",
+                <h5>
+                  Tatooine
+</h5>,
+                <h4>
+                  Population:
+</h4>,
+                " ",
+                <h5>
+                  200000
+</h5>,
+                <h4>
+                  Species:
+</h4>,
+                " ",
+                <h5>
+                  Human
+</h5>,
+              ],
+              "className": "card-data",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": <h4>
+                  Planet:
+</h4>,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Planet:",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Planet:",
+                ],
+                "type": "h4",
+              },
+              " ",
+              Object {
+                "instance": <h5>
+                  Tatooine
+</h5>,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Tatooine",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Tatooine",
+                ],
+                "type": "h5",
+              },
+              Object {
+                "instance": <h4>
+                  Population:
+</h4>,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Population:",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Population:",
+                ],
+                "type": "h4",
+              },
+              " ",
+              Object {
+                "instance": <h5>
+                  200000
+</h5>,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "200000",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "200000",
+                ],
+                "type": "h5",
+              },
+              Object {
+                "instance": <h4>
+                  Species:
+</h4>,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Species:",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Species:",
+                ],
+                "type": "h4",
+              },
+              " ",
+              Object {
+                "instance": <h5>
+                  Human
+</h5>,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Human",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Human",
+                ],
+                "type": "h5",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+    "disableLifecycleMethods": true,
+  },
+}
+`;
