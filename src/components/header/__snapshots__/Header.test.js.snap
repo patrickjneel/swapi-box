@@ -38,7 +38,7 @@ ShallowWrapper {
         <button
           onClick={[Function]}
 >
-          Favorites
+          Favorites 
 </button>,
       ],
       "className": "header",
@@ -86,11 +86,17 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Favorites",
+          "children": Array [
+            "Favorites ",
+            undefined,
+          ],
           "onClick": [Function],
         },
         "ref": null,
-        "rendered": "Favorites",
+        "rendered": Array [
+          "Favorites ",
+          undefined,
+        ],
         "type": "button",
       },
     ],
@@ -121,7 +127,7 @@ ShallowWrapper {
           <button
             onClick={[Function]}
 >
-            Favorites
+            Favorites 
 </button>,
         ],
         "className": "header",
@@ -169,11 +175,17 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Favorites",
+            "children": Array [
+              "Favorites ",
+              undefined,
+            ],
             "onClick": [Function],
           },
           "ref": null,
-          "rendered": "Favorites",
+          "rendered": Array [
+            "Favorites ",
+            undefined,
+          ],
           "type": "button",
         },
       ],
