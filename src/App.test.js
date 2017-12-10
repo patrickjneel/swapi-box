@@ -23,7 +23,8 @@ describe('App Test', () => {
     expect(foundHeader.length).toEqual(1)
     expect(foundConatiner.length).toEqual(1)
     expect(foundScroll.length).toEqual(1)
-  })
+
+  });
   
   it('should have a default state', () => {
     const renderedApp = shallow(<App />)
@@ -41,13 +42,14 @@ describe('App Test', () => {
     expect(renderedApp.state('location')).toEqual(expectedLocation)
     expect(renderedApp.state('favorites')).toEqual(expectedFavorites)
 
-  })
+  });
 
   it('should match the snap shot', () => {
     const renderedApp = shallow(<App />);
 
     expect(renderedApp).toMatchSnapshot();
-  })
+
+  });
 
   it('should set the location when the vehicle is passed in', () => {
     const renderedApp = shallow(<App />);
@@ -55,7 +57,8 @@ describe('App Test', () => {
 
     renderedApp.instance().upDateData('vehicles');
     expect(renderedApp.state('location')).toEqual(expectedLocation);
-  })
+
+  });
 
   it('should set the people location when  people is passed in', () => {
     const renderedApp = shallow(<App />);
@@ -63,7 +66,8 @@ describe('App Test', () => {
 
     renderedApp.instance().upDateData('people');
     expect(renderedApp.state('location')).toEqual(expectedLocation);
-  })
+
+  });
 
   it('should set the planets location when the planets is passed in', () => {
     const renderedApp = shallow(<App />);
@@ -71,7 +75,8 @@ describe('App Test', () => {
 
     renderedApp.instance().upDateData('planets');
     expect(renderedApp.state('location')).toEqual(expectedLocation);
-  })
+
+  });
 
   it('should set the planets when the favorites is called', () => {
     const renderedApp = shallow(<App />);
@@ -79,7 +84,8 @@ describe('App Test', () => {
 
     renderedApp.instance().upDateData('favorites');
     expect(renderedApp.state('location')).toEqual(expectedLocation);
-  })
+
+  });
 
   it('should add a favorite when a card is clicked', () => {
     const renderedApp = shallow(<App />);
@@ -102,9 +108,9 @@ describe('App Test', () => {
     renderedApp.instance().updateFavorite(favoritedCard);
     expect(renderedApp.state('favorites')).toEqual(expectedState);
 
-  })
+  });
 
-  it.only('should add and remove a card from favorites when clicked twice', () => {
+  it('should add and remove a card from favorites when clicked twice', () => {
     const renderedApp = shallow(<App />);
     const initialState = [];
     const favoritedCard = 
@@ -125,32 +131,25 @@ describe('App Test', () => {
     expect(renderedApp.state('favorites')).toEqual(expectedState);
     renderedApp.instance().updateFavorite(favoritedCard);
     expect(renderedApp.state('favorites')).toEqual(initialState);
-  })
 
+  });
 
+  it('should change class names when clicked from a normal card to favorited card', () => {
+    const renderedApp = shallow(<App />);
+    const initalClass = renderedApp.find('imperial');
+    const expectedClass = renderedApp.find('imperial favorited');
+    const favoritedCard = 
+       {
+         homeworld: "Stewjon",   
+         name: "Obi-Wan Kenobi",
+         population: "unknown",
+         species: "Human"
+       }
 
+    expect(renderedApp.find('Card')).toEqual(initalClass);
+    renderedApp.instance().updateFavorite(favoritedCard);
+    expect(renderedApp.find('Card')).toEqual(expectedClass);
 
+  });
 
-  // it.skip('should add a favorite card to favorties when card has been clicked' , () => {
-  //   const renderedApp = shallow(<App />);
-  //   const initialState = [];
-  //   const mockData = [
-  //     {
-  //       name: "Luke Skywalker",
-  //       homeworld: "Tatooine",
-  //       population: "200000",
-  //       species: "Human"
-  //     }
-  //   ]
-  //   expect(renderedApp.state('favorites')).toEqual(initialState);
-  //     console.log(renderedApp.debug())
-  //     renderedApp.setState({ favorites: mockData })
-
-  //     renderedApp.instance().updateFavorite()
-
-  //   expect(renderedApp.state('favorites')).toEqual(mockData)
-
-
-
-  // });
 });
