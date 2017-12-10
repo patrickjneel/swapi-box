@@ -11,7 +11,8 @@ module.exports = {
     "browser": true,
     "mocha": true,
     "node": true,
-    "es6": true
+    "es6": true,
+    "jest": true
   },
   // Having a problem with one of these rules? Learn more about it here: https://eslint.org/docs/rules/
   "rules": {

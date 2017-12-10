@@ -4,19 +4,18 @@ import PropTypes from 'prop-types';
 
 
 const Header = ({upDateData, favorites}) => {
- 
   return (
     <div className="header">
-      <button onClick={(event) => upDateData('people')}>
+      <button onClick={() => upDateData('people')}>
        People
       </button>
-      <button onClick={(event) => upDateData('planets')}>
+      <button onClick={() => upDateData('planets')}>
        Planets
       </button>
-      <button onClick={(event) => upDateData('vehicles')}>
+      <button onClick={() => upDateData('vehicles')}>
        Vehicles
       </button>
-      <button onClick={(event) => upDateData('favorites')}>
+      <button onClick={() => upDateData('favorites')}>
        Favorites {favorites}
       </button>
     </div>
@@ -26,5 +25,6 @@ const Header = ({upDateData, favorites}) => {
 export default Header;
 
 Header.propTypes = {
-  upDateData: PropTypes.func
+  upDateData: PropTypes.func,
+  favorites: PropTypes.array
 };

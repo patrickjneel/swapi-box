@@ -9,7 +9,7 @@ describe('Scrolling-text Test', () => {
       title: "The Empire Strikes Back", 
       crawl: "things arent chill in the galaxy",
       episodeNumber: 5
-    }
+    };
     const renderedScroll = shallow(<Scrolling film={mockData}/>);
 
     expect(renderedScroll).toBeDefined();
@@ -20,7 +20,7 @@ describe('Scrolling-text Test', () => {
       title: "The Empire Strikes Back", 
       crawl: "things arent chill in the galaxy",
       episodeNumber: 5
-    }
+    };
     const renderedScroll = mount(<Scrolling film={mockData}/>);
 
     expect(renderedScroll.props().film).toEqual(mockData);
@@ -32,10 +32,10 @@ describe('Scrolling-text Test', () => {
       title: "The Empire Strikes Back", 
       crawl: "things arent chill in the galaxy",
       episodeNumber: 5
-    }
+    };
     const renderedScroll = shallow(<Scrolling film={mockData}/>);
 
     expect(renderedScroll).toMatchSnapshot();
-  })
+  });
 
 });
