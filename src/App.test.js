@@ -104,7 +104,7 @@ describe('App Test', () => {
 
   })
 
-  it.only('should add and remove a card from favorites when clicked twice', () => {
+  it('should add and remove a card from favorites when clicked twice', () => {
     const renderedApp = shallow(<App />);
     const initialState = [];
     const favoritedCard = 
@@ -125,6 +125,24 @@ describe('App Test', () => {
     expect(renderedApp.state('favorites')).toEqual(expectedState);
     renderedApp.instance().updateFavorite(favoritedCard);
     expect(renderedApp.state('favorites')).toEqual(initialState);
+  })
+
+  it('should change class names when clicked from a normal card to favorited card', () => {
+    const renderedApp = shallow(<App />);
+    const initalClass = renderedApp.find('imperial');
+    const expectedClass = renderedApp.find('imperial favorited');
+    const favoritedCard = 
+       {
+         homeworld: "Stewjon",   
+         name: "Obi-Wan Kenobi",
+         population: "unknown",
+         species: "Human"
+       }
+
+    expect(renderedApp.find('Card')).toEqual(initalClass);
+    renderedApp.instance().updateFavorite(favoritedCard);
+    expect(renderedApp.find('Card')).toEqual(expectedClass);
+
   })
 
 
