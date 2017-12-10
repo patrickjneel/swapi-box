@@ -40,6 +40,10 @@ describe('App Test', () => {
 
   })
 
-  
+  it('should match the snap shot', () => {
+    const renderedApp = shallow(<App />)
+
+    expect(renderedApp).toMatchSnapshot();
+  })
   
 });
