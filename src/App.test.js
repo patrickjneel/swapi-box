@@ -125,7 +125,8 @@ describe('App Test', () => {
     expect(renderedApp.state('favorites')).toEqual(expectedState);
     renderedApp.instance().updateFavorite(favoritedCard);
     expect(renderedApp.state('favorites')).toEqual(initialState);
-  })
+
+  });
 
   it('should change class names when clicked from a normal card to favorited card', () => {
     const renderedApp = shallow(<App />);
