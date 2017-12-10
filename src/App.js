@@ -21,7 +21,6 @@ class App extends Component {
     }
       this.upDateData = this.upDateData.bind(this);
       this.updateFavorite = this.updateFavorite.bind(this);
-      this.updateFavoriteCount = this.updateFavoriteCount.bind(this)    
   }
 
   upDateData(newData) {
@@ -39,11 +38,6 @@ class App extends Component {
       favorites.push(card)
     }
     this.setState({favorites})
-  }
-
-  updateFavoriteCount(favorites) {
-    let count = favorites.length
-    return count
   }
 
   async componentDidMount() {
