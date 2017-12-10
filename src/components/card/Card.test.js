@@ -47,7 +47,7 @@ const mockFunc = jest.fn();
         location={mockLocation} 
         updateFavorite={mockFunc} 
         favorites={mockFunc}
-        type={type}
+        type={mockType}
       />);
     expect(renderedCard.props().itemData).toEqual(mockData)
     expect(renderedCard.props().location).toEqual(mockLocation)
