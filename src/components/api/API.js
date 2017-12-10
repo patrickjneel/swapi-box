@@ -5,7 +5,7 @@ try {
     const data = await fetchedData.json();
     return Object.assign({}, {title: data.title}, {crawl: data.opening_crawl}, {episodeNumber: data.episode_id})
   }
- catch (e) {
+ catch (ex) {
   const error = new Error('failed in film fetch');
   return error;
   }
@@ -27,7 +27,7 @@ try {
     });
         return Promise.all(mappedPeople);
     }
-    catch (e) {
+    catch (ex) {
       const error = new Error('failed in people fetch');
       return error;
     }
@@ -45,7 +45,7 @@ try {
      
       return Promise.all(vehicleMapped);
     }
-    catch (e) {
+    catch (ex) {
       const error = new Error('failed in vehicle fetch');
       return error;
     }
@@ -65,7 +65,7 @@ try {
 
     return Promise.all(mappedPlanets)
     }
-    catch (e) {
+    catch (ex) {
       const error = new Error('failed in planet fetch');
       return error;
     }
@@ -83,7 +83,7 @@ try {
 
     return Promise.all(residents)
     }
-    catch (e) {
+    catch (ex) {
       const error = new Error('failed in planet fetch');
       return error;
     }
