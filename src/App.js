@@ -21,7 +21,6 @@ class App extends Component {
     }
       this.upDateData = this.upDateData.bind(this);
       this.updateFavorite = this.updateFavorite.bind(this);
-      this.updateFavoriteCount = this.updateFavoriteCount.bind(this)    
   }
 
   upDateData(newData) {
@@ -41,11 +40,6 @@ class App extends Component {
     this.setState({favorites})
   }
 
-  updateFavoriteCount(favorites) {
-    let count = favorites.length
-    return count
-  }
-
   async componentDidMount() {
     const film = await fetchFilm();
     const people =  await fetchPeople()
@@ -55,7 +49,6 @@ class App extends Component {
   }
 
   render() {
-    
     const arrayToRender = this.state.location;
 
     return (
