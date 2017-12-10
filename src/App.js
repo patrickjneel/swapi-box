@@ -49,7 +49,6 @@ class App extends Component {
   }
 
   render() {
-    
     const arrayToRender = this.state.location;
 
     return (
