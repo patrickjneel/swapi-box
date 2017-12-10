@@ -42,7 +42,7 @@ describe('CardContainer Test', () => {
     ]
     const mockLocation = 'people';
     const mockFavs = [];
-    const renderedContainer = mount(
+    const renderedContainer = shallow(
       <CardContainer 
         itemData={mockData} 
         location={mockLocation} 

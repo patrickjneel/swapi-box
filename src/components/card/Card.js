@@ -57,7 +57,8 @@ const Card = ( {itemData, location, updateFavorite, type} ) => {
 export default Card;
 
 Card.propTypes = {
-  itemData: PropTypes.object,
-  location: PropTypes.string,
-  updateFavorite: PropTypes.func
+  itemData: PropTypes.array,
+  location: PropTypes.func,
+  updateFavorite: PropTypes.func,
+  type: PropTypes.func
 };
