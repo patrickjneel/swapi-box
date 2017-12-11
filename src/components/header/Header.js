@@ -23,8 +23,8 @@ const Header = ({upDateData, favorites, location}) => {
        Planets
       </button>
       <button 
-         onClick={() => upDateData('vehicles')}
-         className={vehicleClass}>
+        onClick={() => upDateData('vehicles')}
+        className={vehicleClass}>
         Vehicles
       </button>
       <button 
@@ -40,5 +40,6 @@ export default Header;
 
 Header.propTypes = {
   upDateData: PropTypes.func,
-  favorites: PropTypes.number
+  favorites: PropTypes.number,
+  location: PropTypes.string
 };
