@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 
 const Header = ({upDateData, favorites}) => {
+  // let classChange = upDateData ? 'unselected' : 'selected'
+
   return (
     <div className="header">
       <button onClick={() => upDateData('people')}>
@@ -26,5 +28,5 @@ export default Header;
 
 Header.propTypes = {
   upDateData: PropTypes.func,
-  favorites: PropTypes.array
+  favorites: PropTypes.number
 };

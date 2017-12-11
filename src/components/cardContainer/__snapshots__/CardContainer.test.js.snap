@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardContainer Test should match snapShot of CardContainer 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CardContainer
+    favorites={
+        Array [
+            Object {
+              "homeworld": "Tatooine",
+              "name": "Darth Vader",
+              "population": "200000",
+              "species": "Human",
+            },
+          ]
+    }
+    itemData={
+        Array [
+            Object {
+              "homeworld": "Tatooine",
+              "name": "Darth Vader",
+              "population": "200000",
+              "species": "Human",
+            },
+          ]
+    }
+    location="people"
+    updateFavorite={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Card
+          itemData={
+                    Object {
+                              "homeworld": "Tatooine",
+                              "name": "Darth Vader",
+                              "population": "200000",
+                              "species": "Human",
+                            }
+          }
+          location="people"
+          type="imperial favorited"
+          updateFavorite={[Function]}
+/>,
+      ],
+      "className": "container",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "Darth Vader",
+        "nodeType": "function",
+        "props": Object {
+          "itemData": Object {
+            "homeworld": "Tatooine",
+            "name": "Darth Vader",
+            "population": "200000",
+            "species": "Human",
+          },
+          "location": "people",
+          "type": "imperial favorited",
+          "updateFavorite": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Card
+            itemData={
+                        Object {
+                                    "homeworld": "Tatooine",
+                                    "name": "Darth Vader",
+                                    "population": "200000",
+                                    "species": "Human",
+                                  }
+            }
+            location="people"
+            type="imperial favorited"
+            updateFavorite={[Function]}
+/>,
+        ],
+        "className": "container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "Darth Vader",
+          "nodeType": "function",
+          "props": Object {
+            "itemData": Object {
+              "homeworld": "Tatooine",
+              "name": "Darth Vader",
+              "population": "200000",
+              "species": "Human",
+            },
+            "location": "people",
+            "type": "imperial favorited",
+            "updateFavorite": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+    "disableLifecycleMethods": true,
+  },
+}
+`;
