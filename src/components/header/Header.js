@@ -28,5 +28,5 @@ export default Header;
 
 Header.propTypes = {
   upDateData: PropTypes.func,
-  favorites: PropTypes.array
+  favorites: PropTypes.number
 };
