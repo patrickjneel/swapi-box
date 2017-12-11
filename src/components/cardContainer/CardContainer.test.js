@@ -37,7 +37,7 @@ describe('CardContainer Test', () => {
 
   });
 
-  it.skip('should match snapShot of CardContainer', () => {
+  it('should match snapShot of CardContainer', () => {
     const mockFunc = jest.fn();
     const mockData = 
       {
@@ -48,13 +48,21 @@ describe('CardContainer Test', () => {
       };
     
     const mockLocation = 'people';
-    const mockFavs = [];
+    const mockFavs = [
+      {
+        homeworld: "Tatooine", 
+        name: "Darth Vader", 
+        species: "Human", 
+        population: "200000"
+      }
+
+    ];
     const renderedContainer = shallow(
       <CardContainer 
         itemData={mockData} 
         location={mockLocation} 
         updateFavorite={mockFunc} 
-        favorites={mockFunc}
+        favorites={mockFavs}
       />);
 
     expect(renderedContainer).toMatchSnapshot();

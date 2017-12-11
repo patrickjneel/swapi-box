@@ -16,11 +16,10 @@ describe('Card Test', () => {
       };
     
     const mockLocation = 'people';
-    const mockFavs = [];
     const renderedCard = shallow(
       <Card
         itemData={mockData} 
-        location={mockFunc} 
+        location={mockLocation} 
         updateFavorite={mockFunc} 
         favorites={mockFunc}
       />);
@@ -40,7 +39,6 @@ describe('Card Test', () => {
     ];
     
     const mockLocation = 'people';
-    const mockFavs = [];
     const mockType= 'imperial';
     const renderedCard = mount(
       <Card
@@ -69,7 +67,6 @@ describe('Card Test', () => {
       };
     
     const mockLocation = 'people';
-    const mockFavs = [];
     const type= 'imperial';
     const renderedCard = mount(
       <Card

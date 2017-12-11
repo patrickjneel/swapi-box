@@ -24,7 +24,7 @@ class App extends Component {
   }
 
   upDateData(newData) {
-    this.setState({location: newData}) 
+    this.setState({location: newData})
   }
 
   updateFavorite(card) {
