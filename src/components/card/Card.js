@@ -4,6 +4,7 @@ import imperialEmblem from '../../imperialEmblem.svg';
 import PropTypes from 'prop-types';
 
 const Card = ( {itemData, location, updateFavorite, type} ) => {
+  console.log(itemData)
   let mapped;
   if (location === 'planets') {
     if (itemData.residents.length) {
