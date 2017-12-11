@@ -37,7 +37,7 @@ describe('CardContainer Test', () => {
 
   });
 
-  it.skip('should match snapShot of CardContainer', () => {
+  it('should match snapShot of CardContainer', () => {
     const mockFunc = jest.fn();
     const mockData = 
       {
