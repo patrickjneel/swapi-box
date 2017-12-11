@@ -5,6 +5,8 @@
   height: 46px;
   padding: 20px 0px;
   width: 100%; }
+  .header .selected {
+    border: 5px solid orange; }
 
 button {
   background-color: #ED2939;

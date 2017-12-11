@@ -62,6 +62,7 @@ class App extends Component {
         <Header 
           upDateData={this.upDateData}
           favorites={this.state.favorites.length}
+          location={this.state.location}
         />
         <CardContainer 
           itemData={this.state[arrayToRender]}

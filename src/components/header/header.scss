@@ -6,6 +6,9 @@
   padding: 20px 0px;
   width: 100%;
 
+  .selected {
+    border: 5px solid orange;
+  }
 }
 
 button {
@@ -17,3 +20,4 @@ button {
   padding: 2px 5px;
   width: 100px;
 }
+
