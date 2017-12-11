@@ -46,7 +46,7 @@ describe('CardContainer Test', () => {
         species: "Human", 
         population: "200000"
       }
-    ]
+    ];
     
     const mockLocation = 'people';
     const mockFavs = [
