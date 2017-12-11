@@ -19,19 +19,28 @@ describe('Header Test', () => {
 
   it('should render four buttons', () => {
     const mockFunc = jest.fn();
-    const mockLocation = 'people'
+    const mockLocation = 'people';
     const mockFavorites = 0;
-    const renderedHeader = shallow(<Header upDateData={mockFunc} favorites={mockFavorites} location={mockLocation}/>);
+    const renderedHeader = shallow(
+      <Header 
+        upDateData={mockFunc} 
+        favorites={mockFavorites} 
+        location={mockLocation}/>
+    );
     expect(renderedHeader.find('button').length).toEqual(4);
 
   });
 
   it('should match sanp shot', () => {
     const mockFunc = jest.fn();
-    const mockLocation = 'people'
+    const mockLocation = 'people';
     const mockFavorites = 0;
-    const renderedHeader = shallow(<Header upDateData={mockFunc} favorites={mockFavorites} location={mockLocation}/>);
-
+    const renderedHeader = shallow(
+      <Header 
+        upDateData={mockFunc} 
+        favorites={mockFavorites} 
+        location={mockLocation}/>
+    );
     expect(renderedHeader).toMatchSnapshot();
   });
 
