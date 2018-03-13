@@ -9,10 +9,14 @@ const Header = ({upDateData, favorites, location, showHome}) => {
   let planetClass = location === 'planets' ? 'selected' : 'unselected';
   let vehicleClass = location === 'vehicles' ? 'selected' : 'unselected';
   let favoriteClass = location === 'favorites' ? 'selected' : 'unselected';
+  let homeClass = location === 'home' ? 'selected' : 'unselected';
 
   return (
     <div className="header">
-      <button onClick={() => showHome()}>
+      <button 
+        onClick={() => upDateData('home')}
+        className={homeClass}
+      >
         Home
       </button>
       <button 
