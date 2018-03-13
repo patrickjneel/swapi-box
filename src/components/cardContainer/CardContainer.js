@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const CardContainer = ({itemData, location, updateFavorite, favorites}) => {
   if(location === 'home') {
     return (
-      <img src={require("../../at-at.gif")} />
+      <img className="at-at" src={require("../../at-at.gif")} />
     )
   } else {
   const persons = itemData.map(card => {
