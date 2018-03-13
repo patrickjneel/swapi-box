@@ -1,8 +1,7 @@
 div.container {
   background-color: grey;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center; }
+  flex-wrap: wrap; }
 
 .at-at {
   height: 403px;
