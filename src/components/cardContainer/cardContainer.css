@@ -1,4 +1,9 @@
 div.container {
   background-color: grey;
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  justify-content: center; }
+
+.at-at {
+  padding: 0px 275px;
+  width: 60%; }
