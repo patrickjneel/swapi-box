@@ -4,6 +4,11 @@ import './cardContainer.css';
 import PropTypes from 'prop-types';
 
 const CardContainer = ({itemData, location, updateFavorite, favorites}) => {
+  if(location === 'home') {
+    return (
+      <img src={require("../../at-at.gif")} />
+    )
+  } else {
   const persons = itemData.map(card => {
     let favoritedCard = favorites.find(favorite => favorite.name === card.name);
     let imperialClass = favoritedCard ? 'imperial favorited' : 'imperial';  
@@ -22,7 +27,7 @@ const CardContainer = ({itemData, location, updateFavorite, favorites}) => {
     </div>
   );
 };
-
+}
 export default CardContainer;
 
 CardContainer.propTypes = {
