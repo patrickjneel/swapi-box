@@ -48,13 +48,14 @@ async function fetchVehicles() {
     const vehicleData = await vehicleFetch.json();
     const vehicleResults = await vehicleData.results;
     const vehicleMapped =  vehicleResults.map(vehicle => {
-   
+    console.log(vehicle)
       return Object.assign(
         {}, 
         {name: vehicle.name}, 
         {model: vehicle.model}, 
         {class: vehicle.vehicle_class}, 
-        {passengers: vehicle.passengers}
+        {passengers: vehicle.passengers},
+        {manufacturer: vehicle.manufacturer}
       );
     });
      
