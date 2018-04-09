@@ -1,6 +1,9 @@
+# Swapi-Box
+
 ![ScreenShot](./screenshot.png)
 
-## Swapi-Box was a one week individual project focusing on refining our React skills, and also a strong focus on asynchronus API calls.
+## OverView
+This was a week long solo project that had displayed characters, vehicles, and planets from the Star Wars Universe. It was one of my favorite projects, because we had so much creative freedom over the project.
 
-* Tech Stack: React, SASS, ES7 
-* API's: SwapiAPI
+## Areas of Focus
+This projects was used with create-react-app, and SCSS. I also dealt with asynchronous API calls to fetch the data that we needed to display on the pages. This project really reinforced our knowledge and skills in React, and ES7 async await.
