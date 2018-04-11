@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "enzyme-adapter-react-16": "^1.1.0",
+    "gh-pages": "^1.1.0",
     "node-sass-chokidar": "0.0.3",
     "npm-run-all": "^4.1.2",
     "prop-types": "^15.6.0",
@@ -21,11 +22,14 @@
     "build": "npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "eslint": "./node_modules/eslint/bin/eslint.js ./src/components/*/*.js"
+    "eslint": "./node_modules/eslint/bin/eslint.js ./src/components/*/*.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "enzyme": "^3.2.0",
     "eslint": "^4.12.1",
     "eslint-plugin-react": "^7.5.1"
-  }
+  },
+  "homepage": "https://patrickjneel.github.io/swapi-box/"
 }
