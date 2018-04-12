@@ -5,7 +5,14 @@ import Header from './components/header/Header';
 import CardContainer from './components/cardContainer/CardContainer';
 import API from './components/api/API';
 
-const {fetchFilm, fetchPeople, fetchVehicles, fetchPlanets, planetResidents} = API;
+const {
+  fetchFilm, 
+  fetchPeople, 
+  fetchVehicles, 
+  fetchPlanets, 
+  planetResidents, 
+  fetchStarShips
+} = API;
 
 class App extends Component {
   constructor() {
@@ -15,6 +22,7 @@ class App extends Component {
       people: [],
       vehicles: [],
       planets: [],
+      starShips: [],
       location: 'home',
       favorites: []
   
@@ -29,7 +37,6 @@ class App extends Component {
   }
 
   showHome() {
-    console.log('click')
     return (
       <div className="container">
         <img src={require("./at-at.gif")} />
@@ -55,7 +62,9 @@ class App extends Component {
     const people =  await fetchPeople()
     const vehicles = await fetchVehicles();
     const planets =  await fetchPlanets();
-    this.setState({ film, people, vehicles, planets })
+    const starShips = await fetchStarShips();
+    console.log(starShips)
+    this.setState({ film, people, vehicles, planets, starShips })
   }
 
   render() {
