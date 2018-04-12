@@ -9,7 +9,12 @@ const CardContainer = ({itemData, location, updateFavorite, favorites}) => {
     return (
       <img className="at-at" src={require("../../at-at.gif")} />
     )
-  } else {
+  } else if(!itemData.length) {
+    return (
+      <img className="droid" src={require("../../tiefighter.gif")} />
+    )
+  }
+  else {
   const persons = itemData.map(card => {
     let favoritedCard = favorites.find(favorite => favorite.name === card.name);
     let imperialClass = favoritedCard ? 'imperial favorited' : 'imperial';  

@@ -29,19 +29,10 @@ class App extends Component {
     }
       this.upDateData = this.upDateData.bind(this);
       this.updateFavorite = this.updateFavorite.bind(this);
-      this.showHome = this.showHome.bind(this);
   }
 
   upDateData(newData) {
     this.setState({location: newData})
-  }
-
-  showHome() {
-    return (
-      <div className="container">
-        <img src={require("./at-at.gif")} />
-      </div>
-    )
   }
 
   updateFavorite(card) {
@@ -63,7 +54,6 @@ class App extends Component {
     const vehicles = await fetchVehicles();
     const planets =  await fetchPlanets();
     const starShips = await fetchStarShips();
-    console.log(starShips)
     this.setState({ film, people, vehicles, planets, starShips })
   }
 
@@ -82,7 +72,6 @@ class App extends Component {
           upDateData={this.upDateData}
           favorites={this.state.favorites.length}
           location={this.state.location}
-          showHome={this.showHome}
         />
         <CardContainer 
           itemData={this.state[arrayToRender]}
