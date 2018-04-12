@@ -3,7 +3,7 @@ import './header.css';
 import PropTypes from 'prop-types';
 
 
-const Header = ({upDateData, favorites, location, showHome}) => {
+const Header = ({upDateData, favorites, location}) => {
   let peopleClass = location === 'people' ? 'selected' : 'unselected';
   let planetClass = location === 'planets' ? 'selected' : 'unselected';
   let vehicleClass = location === 'vehicles' ? 'selected' : 'unselected';
@@ -15,8 +15,7 @@ const Header = ({upDateData, favorites, location, showHome}) => {
     <div className="header">
       <button 
         onClick={() => upDateData('home')}
-        className={homeClass}
-      >
+        className={homeClass}>
         Home
       </button>
       <button 

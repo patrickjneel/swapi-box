@@ -110,7 +110,6 @@ async function fetchStarShips () {
   const starShipData = await starShipFetch.json();
   const starShipResults = await starShipData.results;
   const starShipMapped = starShipResults.map(starship => {
-    console.log(starship)
     return Object.assign(
       {},
       {name: starship.name},
