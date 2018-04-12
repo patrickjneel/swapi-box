@@ -4,6 +4,7 @@ import './cardContainer.css';
 import PropTypes from 'prop-types';
 
 const CardContainer = ({itemData, location, updateFavorite, favorites}) => {
+  console.log(itemData)
   if(location === 'home') {
     return (
       <img className="at-at" src={require("../../at-at.gif")} />

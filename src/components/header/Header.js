@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 
 
 const Header = ({upDateData, favorites, location, showHome}) => {
-
   let peopleClass = location === 'people' ? 'selected' : 'unselected';
   let planetClass = location === 'planets' ? 'selected' : 'unselected';
   let vehicleClass = location === 'vehicles' ? 'selected' : 'unselected';
   let favoriteClass = location === 'favorites' ? 'selected' : 'unselected';
+  let starshipClass = location === 'starShips' ? 'selected' : 'unselected';
   let homeClass = location === 'home' ? 'selected' : 'unselected';
 
   return (
@@ -33,6 +33,11 @@ const Header = ({upDateData, favorites, location, showHome}) => {
         onClick={() => upDateData('vehicles')}
         className={vehicleClass}>
         Vehicles
+      </button>
+      <button 
+        onClick={() => upDateData('starShips')}
+        className={starshipClass}>
+        Star Ships
       </button>
       <button 
         onClick={() => upDateData('favorites')}

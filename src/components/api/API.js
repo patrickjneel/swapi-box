@@ -48,7 +48,6 @@ async function fetchVehicles() {
     const vehicleData = await vehicleFetch.json();
     const vehicleResults = await vehicleData.results;
     const vehicleMapped =  vehicleResults.map(vehicle => {
-    console.log(vehicle)
       return Object.assign(
         {}, 
         {name: vehicle.name}, 
@@ -106,10 +105,29 @@ async function planetResidents(planetRes) {
   }
 }
 
+async function fetchStarShips () {
+  const starShipFetch = await fetch('https://swapi.co/api/starships/');
+  const starShipData = await starShipFetch.json();
+  const starShipResults = await starShipData.results;
+  const starShipMapped = starShipResults.map(starship => {
+    console.log(starship)
+    return Object.assign(
+      {},
+      {name: starship.name},
+      {StarShipModel: starship.model},
+      {StarShipCost: starship.cost_in_credits},
+      {StarShipPassengers: starship.passengers},
+      {StarShipManufacturer: starship.manufacturer}
+    )
+  })
+    return Promise.all(starShipMapped)
+}
+
 export default {
   fetchFilm, 
   fetchPeople, 
   fetchVehicles, 
   fetchPlanets, 
-  planetResidents
+  planetResidents,
+  fetchStarShips
 };
