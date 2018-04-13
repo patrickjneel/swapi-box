@@ -14,3 +14,15 @@ div.container {
   margin-left: 78px;
   padding-left: 239px;
 }
+
+@media (max-width: 448px) { 
+  div.container {
+    justify-content: center;
+  }
+
+  .at-at {
+    height: 320px;
+    padding: 35px 0px;
+    width: 100%;
+  }
+}

@@ -16,3 +16,8 @@ button {
   height: 45px;
   padding: 2px 5px;
   width: 110px; }
+
+@media (max-width: 448px) {
+  .header {
+    flex-wrap: wrap;
+    height: 115px; } }

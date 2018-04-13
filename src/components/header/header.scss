@@ -21,3 +21,10 @@ button {
   width: 110px;
 }
 
+@media (max-width: 448px) { 
+  .header {
+    flex-wrap: wrap;
+    height: 115px;
+  }
+}
+
