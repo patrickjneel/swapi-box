@@ -54,7 +54,8 @@ async function fetchVehicles() {
         {model: vehicle.model}, 
         {class: vehicle.vehicle_class}, 
         {passengers: vehicle.passengers},
-        {manufacturer: vehicle.manufacturer}
+        {manufacturer: vehicle.manufacturer},
+        {crew: vehicle.crew}
       );
     });
      
@@ -116,7 +117,8 @@ async function fetchStarShips () {
       {StarShipModel: starship.model},
       {StarShipCost: starship.cost_in_credits},
       {StarShipPassengers: starship.passengers},
-      {StarShipManufacturer: starship.manufacturer}
+      {StarShipManufacturer: starship.manufacturer},
+      {StarShipClass: starship.starship_class}
     )
   })
     return Promise.all(starShipMapped)

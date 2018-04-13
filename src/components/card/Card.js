@@ -45,6 +45,7 @@ const Card = ( {itemData, location, updateFavorite, type} ) => {
         <div className="card-data">
           <h4>Model:</h4> <h5>{itemData.model}</h5>
           <h4>Class:</h4> <h5>{itemData.class}</h5>
+          <h4>Crew:</h4> <h5>{itemData.crew}</h5>
           <h4>Passengers:</h4><h5>{itemData.passengers}</h5>
           <h4>Manufacturer:</h4><h5>{itemData.manufacturer}</h5>
         </div>
@@ -53,7 +54,8 @@ const Card = ( {itemData, location, updateFavorite, type} ) => {
         itemData.StarShipModel &&
         <div className="card-data">
           <h4>Model:</h4> <h5>{itemData.StarShipModel}</h5>
-          <h4>Cost:</h4> <h5>{itemData.StarShipCost}</h5>
+          <h4>Class:</h4> <h5>{itemData.StarShipClass}</h5>
+          <h4>Cost:</h4> <h5>{itemData.StarShipCost} credits</h5>
           <h4>Passengers:</h4><h5>{itemData.StarShipPassengers}</h5>
           <h4>Manufacturer:</h4><h5>{itemData.StarShipManufacturer}</h5>
         </div>
