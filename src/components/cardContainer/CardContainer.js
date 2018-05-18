@@ -4,14 +4,13 @@ import './cardContainer.css';
 import PropTypes from 'prop-types';
 
 const CardContainer = ({itemData, location, updateFavorite, favorites}) => {
-  console.log(itemData)
   if(location === 'home') {
     return (
       <img className="at-at" src={require("../../at-at.gif")} />
     )
-  } else if(!itemData.length) {
+  } else if(!itemData.length && location === 'people') {
     return (
-      <img className="droid" src={require("../../tiefighter.gif")} />
+      <img className="droid" src={require("../../Kylo-Ren.svg")} />
     )
   }
   else {
